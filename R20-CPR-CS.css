@@ -1,0 +1,842 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Orbitron&display=swap');
+
+/*Configure the tab buttons*/
+.sheet-character,
+.sheet-config,
+.sheet-journal {
+    display: none
+}
+
+/* show the selected tab */
+.sheet-tabstoggle[value="character"] ~ div.sheet-character,
+.sheet-tabstoggle[value="configuration"] ~ div.sheet-config,
+.sheet-tabstoggle[value="journal"] ~ div.sheet-journal {
+	display: block;
+}
+
+.sheet-hidden {
+  display: none;
+}
+.sheet-hider:not(:checked) + div {
+  display: none;
+}
+
+hr{
+  display: block;
+  margin-top: 1px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 20px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: darkred;
+}
+
+p{
+  font-family: 'Oswald', arial, helvetica, sans-serif;
+  text-align:center;
+  font-size: 14px;
+  margin: 2px;
+}
+
+p2{
+  font-family: 'Oswald', arial, helvetica, sans-serif;
+  text-align:center;
+  font-size: 12px;
+  margin: 2px;
+}
+
+p3{
+  font-family: 'Oswald', arial, helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+  margin: 2px;
+}
+
+h1{
+  font-family: 'Orbitron', Impact, sans-serif;
+  color: darkred;
+  font-size: 22px;
+  font-weight: bold;
+  margin:1px;
+  padding:0px;
+}
+
+h2{
+  font-family: 'Orbitron', Impact, sans-serif;
+  color: white;
+  background: darkred;
+  background: linear-gradient(145deg, darkred 50%, black 100%);
+  height: 12px;
+  font-size: 14px;
+  text-align: left;
+  border-radius: 20px 0px 40px 0px;
+  margin:2px 2px 2px 2px;
+  padding:0px 0px 20px 5px;
+}
+
+h3{
+  font-family: 'Orbitron', Impact, sans-serif;
+  color: white;
+  background: darkred;
+  background: linear-gradient(145deg, darkred 50%, black 100%);
+  height: 6px;
+  font-size: 12px;
+  text-align: left;
+  border-radius: 20px 0px 40px 0px;
+  margin:0px 2px 2px 0px;
+  padding:0px 0px 20px 5px;
+}
+
+input[type=number] {
+  width: 20px;
+  height: 20px;
+  margin: 0px 0px 6px 0px;
+  text-align: right;
+  font-weight: bold;
+  color:darkred;
+  background-color: aliceblue;
+  border: 2px solid darkred;
+  border-radius: 0px 0px 10px 0px;
+  font-size: 12px;
+  text-align: bottom;
+}
+
+input[type=text] {
+  text-transform: uppercase;
+  width: 20px;
+  height: 20px;
+  margin: 0px 1px 1px 1px;
+  color:darkred;
+  background-color: aliceblue;
+  border: 2px solid darkred;
+  border-radius: 0px 0px 20px 0px;
+  font-size: 12px;
+  font-weight: bold;
+  
+}
+
+select {
+  font-family: 'Orbitron', Impact, sans-serif;
+  width: 50px;
+  height: 25px;
+  margin: 0px 0px 0px 0px;
+  padding: 2px 0px 0px 2px;
+  color:darkred;
+  background-color: aliceblue;
+  border: 2px solid darkred;
+  border-radius: 0px 0px 20px 0px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+select.sheet-select-type {
+  font-family: 'Oswald', arial, helvetica, sans-serif;
+  width: 50px;
+  height: 25px;
+  margin: 0px 0px 0px 0px;
+  padding: 2px 0px 0px 2px;
+  color:darkred;
+  background-color: aliceblue;
+  border: 2px solid darkred;
+  border-radius: 0px 0px 20px 0px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+select.sheet-select-lifepath {
+  font-family: 'Oswald', arial, helvetica, sans-serif;
+  width: 50px;
+  height: 25px;
+  margin: 0px 0px 0px 0px;
+  padding: 2px 0px 0px 2px;
+  color:darkred;
+  background-color: aliceblue;
+  border: 2px solid darkred;
+  border-radius: 0px 0px 20px 0px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+select.sheet-select-normal {
+  font-family: 'Oswald', arial, helvetica, sans-serif;
+  text-transform: uppercase;
+  width: 50px;
+  height: 25px;
+  margin: 0px 0px 0px 0px;
+  padding: 2px 0px 0px 2px;
+  color:darkred;
+  background-color: aliceblue;
+  border: 2px solid darkred;
+  border-radius: 0px 0px 20px 0px;
+  font-size: 12px;
+}
+
+textarea {
+  padding: 2px 2px;
+  text-transform: uppercase;
+  max-width: 100%;
+  box-sizing: border-box;
+  border: 2px solid darkred;
+  border-radius: 10px 0px 10px 0px;
+  background-color: aliceblue;
+  font-size: 12px;
+  font-weight: bold;
+  color: darkred;
+  margin:1px;
+  resize: none;
+}
+
+button[type="roll"].sheet-txt-btn:before{
+  content: ' ';
+}
+
+button[type="roll"].sheet-txt-btn{
+  text-align: bottom;
+  vertical-align: top;
+  box-shadow: 0px;
+  height: 20px;
+  border: 2px solid darkred;
+  background-color: transparent;
+  background: 0px;
+  margin: 0px 0px 2px 1px;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 10px 0px 5px 0px;
+  padding: 0px 2px 0px 2px;
+  
+}
+
+button[type="roll"].sheet-txt-btn:hover{
+    background-color: darkred;
+    color:white;
+    height: 20px;
+    border-radius: 10px 0px 5px 0px;
+}
+
+button[type="roll"].sheet-info-btn:before{
+  content: "";
+}
+
+button[type="roll"].sheet-info-btn{
+  box-sizing: border-box;
+  vertical-align: top;
+  color: black;
+  border: 0px;
+  background: 0px;
+}
+
+button[type="roll"].sheet-info-btn:hover{
+    color: red;
+    border: 0px;
+    background: 0px;
+}
+
+button[type="action"].sheet-txt-btn:before{
+  content: ' ';
+}
+
+button[type="action"].sheet-txt-btn{
+  text-align: bottom;
+  vertical-align: top;
+  box-shadow: 0px;
+  height: 20px;
+  border: 2px solid darkred;
+  background-color: transparent;
+  background: 0px;
+  margin: 0px 0px 2px 1px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 10px 0px 5px 0px;
+  padding: 0px 2px 0px 2px;
+  
+}
+
+button[type="action"].sheet-txt-btn:hover{
+    background-color: darkred;
+    color:white;
+    height: 20px;
+    border-radius: 10px 0px 5px 0px;
+}
+
+button[type="action"].sheet-tab-btn:before{
+  content: ' ';
+}
+
+button[type="action"].sheet-tab-btn{
+    font-family: 'Orbitron', Impact, sans-serif;
+  text-align: bottom;
+  vertical-align: top;
+  box-shadow: 0px;
+  height: 20px;
+  border: 2px solid darkred;
+  background-color: aliceblue;
+  margin: 0px 0px 2px 1px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 10px 0px 5px 0px;
+  padding: 0px 2px 0px 2px;
+  
+}
+
+button[type="action"].sheet-tab-btn:hover{
+    background-color: darkred;
+    color:white;
+    height: 20px;
+    border-radius: 10px 0px 5px 0px;
+}
+
+button[type="action"].sheet-info-btn:before{
+  content: "";
+}
+
+button[type="action"].sheet-info-btn{
+  box-sizing: border-box;
+  vertical-align: top;
+  color: black;
+  border: 0px;
+  background: 0px;
+}
+
+button[type="action"].sheet-info-btn:hover{
+    color: red;
+    border: 0px;
+    background: 0px;
+}
+
+.content {
+    width: 100%;
+    min-width: 1000px;
+    max-width: 1000px;
+}
+
+.sheet-rolltemplate-default caption {
+  font-family: 'Orbitron', Impact, sans-serif;
+  text-transform: uppercase;
+  color: white;
+  background: darkred;
+  background: linear-gradient(145deg, darkred 50%, black 100%);
+  height: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  border-radius: 20px 0px 40px 0px;
+  padding:1px 0px 0px 10px;
+}
+
+.sheet-rolltemplate-default{
+  text-transform: uppercase;
+  font-family: 'Oswald', arial, helvetica, sans-serif;
+}
+
+.sheet-grid {
+  display: grid;
+   grid-template-columns: 260px 150px 600px;
+   grid-template-areas: 
+   "box1 box2 box7"
+   "box3 box2 box4"
+   "box5 box5 box4"
+   "box6 box6 box4"
+   ". . box4";
+    align-items: start;
+    width: 100%;
+    min-width: 1010px;
+    max-width: 1010px;
+  font-family: 'Oswald', arial, helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px;
+  border: 2px solid black;
+}
+
+.sheet-box1{
+    grid-area:box1;
+    max-width: 260px;
+    background:white;
+}
+.sheet-box2{
+    grid-area: box2;
+    max-width: 150px;
+    background:white;
+}
+
+.sheet-box3{
+    grid-area: box3;
+    max-width: 410px;
+    background:white;
+}
+
+.sheet-box4{
+    grid-area: box4;
+    overflow: auto;
+    white-space: nowrap;
+    max-width: 600px;
+    background:white;
+}
+
+.sheet-skillgrid{
+    display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2px;
+  padding: 1px;
+
+}
+
+.sheet-skillgrid2{
+    display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2px;
+  padding: 1px;
+
+}
+
+.sheet-skillgrid3{
+    display:grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 2px;
+  padding: 1px;
+
+}
+
+.sheet-box5{
+    grid-area: box5;
+    max-width: 410px;
+    background:white;
+}
+
+.sheet-box6{
+    grid-area: box6;
+    overflow: auto;
+    white-space: nowrap;
+    max-height: 370px;
+    max-width: 410px;
+    background:white;
+}
+
+.sheet-grid3 {
+   grid-template-columns: 400px 610px;
+   grid-template-areas: 
+    "ra lpbox"
+    ". .";
+     display: grid;
+  width: 100%;
+  min-width: 1010px;
+  max-width: 1010px;
+  font-family: 'Oswald', arial, helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  border: 2px solid black;
+}
+
+.sheet-grid3 > div{
+    padding:2px;
+}
+
+.sheet-gridlp {
+   grid-template-columns: 200px 200px 200px;
+   grid-template-areas: 
+    "lptab lptab lptab"
+    "lp lp2 en"
+    "fr tl en"
+    " . . .";
+    display: grid;
+  width: 100%;
+  min-width: 600px;
+  max-width: 600px;
+  font-family: 'Oswald', arial, helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+.sheet-lpbox{
+    grid-area:lpbox;
+    background:white;
+    overflow: auto;
+}
+
+.sheet-ra{
+    grid-area:ra;
+    background:white;
+}
+.sheet-lp{
+    grid-area:lp;
+    background:white;
+}
+
+.sheet-lp2{
+    grid-area:lp2;
+    background:white;
+}
+
+.sheet-lptab{
+    grid-area:lptab;
+    background:white;
+}
+
+.sheet-fr{
+    grid-area:fr;
+    background:white;
+}
+
+.sheet-tl{
+    grid-area:tl;
+    background:white;
+}
+
+.sheet-en{
+    grid-area:en;
+    background:white;
+}
+
+.sheet-rlp{
+    grid-area:rlp;
+    background:white;
+}
+
+.sheet-netrunner {
+   grid-template-columns: 165px 165px;
+   grid-template-areas: 
+    "actions deck"
+    "hardware hardware"
+    "software software"
+    ". . . .";
+     display: grid;
+  width: 100%;
+  min-width: 380px;
+  max-width: 380px;
+
+  font-family: 'Oswald', arial, helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  border: 2px solid black;
+}
+
+.sheet-actions{
+    grid-area:actions;
+    background:white;
+}
+
+.sheet-deck{
+    grid-area:deck;
+    background:white;
+}
+
+.sheet-hardware{
+    grid-area:hardware;
+    background:white;
+}
+
+.sheet-software{
+    grid-area:software;
+    background:white;
+}
+
+/*----------------- ROLL TEMPLATES ------------------*/
+
+.sheet-rolltemplate-skill, .sheet-rolltemplate-damage, .sheet-rolltemplate-attack, .sheet-rolltemplate-deathsave, .sheet-rolltemplate-initiative {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+}
+
+.sheet-rolltemplate-attack div.sheet-template-container {
+  border: none !important;
+  font-family: 'Orbitron', Impact, sans-serif;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  border-radius: 20px 0px 0px 0px;
+}
+
+.sheet-rolltemplate-skill div.sheet-template-container {
+  border: none !important;
+  font-family: 'Oswald', Impact, sans-serif;
+  color: #fff;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: left;
+  border-radius: 20px 0px 0px 0px;
+}
+
+.sheet-rolltemplate-deathsave div.sheet-template-container {
+  border: none !important;
+  background: #0f0f0f;
+  color: #fff !important;
+  position: relative;
+  clip-path: 
+    polygon(
+      0% 30px,                 /* top left */
+      30px 0%,                 /* top left */
+      calc(100% - 30px) 0%,    /* top right */
+      100% 30px,               /* top right */
+      100% 100%,               /* bottom right */
+      0%   100%                    /* bottom left */
+    );
+  width: 200px;
+  margin: 0 auto 4px auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.sheet-rolltemplate-initiative div.sheet-template-container {
+  border: none !important;
+  background: #fff;
+  color: #CD272C !important;
+  position: relative;
+  clip-path: 
+    polygon(
+      0% 30px,                 /* top left */
+      30px 0%,                 /* top left */
+      calc(100% - 30px) 0%,    /* top right */
+      100% 30px,               /* top right */
+      100% 100%,               /* bottom right */
+      0%   100%                    /* bottom left */
+    );
+  width: 200px;
+  margin: 0 auto 4px auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.sheet-rolltemplate-initiative div.sheet-template-container .sheet-template-header,
+.sheet-rolltemplate-deathsave div.sheet-template-container .sheet-template-header {
+  font-size: 4rem;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sheet-rolltemplate-deathsave p {
+  font-size: 1.5rem;
+  font-weight: normal;
+  font-family: Nunito, sans-serif;;
+}
+
+.sheet-rolltemplate-deathsave div.sheet-template-container .sheet-template-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sheet-rolltemplate-damage div.sheet-template-container {
+  border: none !important;
+  font-family: 'Orbitron', Impact, sans-serif;
+  background: darkred;
+  background: linear-gradient(145deg, darkred 50%, black 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  border-radius: 0px 0px 40px 0px;
+  padding:0px 0px 0px 0px;
+}
+
+.sheet-rolltemplate-damage div.sheet-template-damage {
+  line-height: auto;
+  font-size: 16px;
+  text-align: center;
+  padding: 4px;
+}
+
+.sheet-rolltemplate-skill .sheet-normal,
+.sheet-rolltemplate-attack .sheet-normal {
+  background: darkred;
+  background: linear-gradient(145deg, darkred 50%, black 100%);
+}
+
+.sheet-rolltemplate-skill .sheet-crit,
+.sheet-rolltemplate-attack .sheet-crit{
+  background: #00B050;
+}
+
+.sheet-rolltemplate-skill .sheet-fail,
+.sheet-rolltemplate-attack .sheet-fail {
+  background: #CD272C;
+}
+
+.sheet-rolltemplate-attack div.sheet-rolltemplate-table {
+  border: none !important;
+  font-family: 'Orbitron', Impact, sans-serif;
+  font-size: 14px;
+  line-height: auto;
+  margin: auto;
+  padding: 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(9, 30px);
+  grid-auto-flow: column;
+  grid-gap: 2px;
+}
+
+.sheet-rolltemplate-attack div.sheet-rolltemplate-table div {
+  background: white;
+  padding-top: 4px;
+}
+
+.sheet-rolltemplate-attack div.sheet-rolltemplate-table div.sheet-header {
+  background: #0f0f0f;
+  color:#fff;
+}
+
+.sheet-rolltemplate-attack div.sheet-template-header {
+  padding-top: 4px;
+  line-height: Auto;
+  font-size: 20px;
+}
+
+.sheet-rolltemplate-skill div.sheet-template-header {
+  padding-top: 2px;
+  line-height: Auto;
+  font-size: 18px;
+}
+
+.sheet-rolltemplate-skill div.sheet-template-row-subhead {
+  line-height: Auto;
+  font-size: 16px;
+}
+
+.sheet-rolltemplate-skill div.sheet-template-row {
+  padding-bottom: 2px;
+}
+
+.sheet-rolltemplate-attack div.sheet-template-row-subhead {
+  line-height: Auto;
+  font-size: 14px;
+}
+
+.sheet-rolltemplate-attack div.sheet-template-row {
+  padding-bottom: 2px;
+}
+
+.sheet-rolltemplate-attack a[href^="~"] {
+  background-color: transparent;
+  padding: 0px;
+  border: 0px; }
+
+.sheet-rolltemplate-attack a:hover {
+  text-decoration: underline !important; }
+
+
+.sheet-rolltemplate-attack a:visited {
+  pointer-events: none;  }
+
+
+.sheet-rolltemplate-skill .sheet-template-header span,
+.sheet-rolltemplate-attack .sheet-template-header span {
+  background-color: transparent;
+  border: 0px;
+  padding: 0px;
+}
+
+.sheet-rolltemplate-skill .inlinerollresult,
+.sheet-rolltemplate-skill .inlinerollresult.fullcrit,
+.sheet-rolltemplate-skill .inlinerollresult.fullfail,
+.sheet-rolltemplate-skill .inlinerollresult.importantroll,
+.sheet-rolltemplate-attack .inlinerollresult,
+.sheet-rolltemplate-attack .inlinerollresult.fullcrit,
+.sheet-rolltemplate-attack .inlinerollresult.fullfail,
+.sheet-rolltemplate-attack .inlinerollresult.importantroll,
+.sheet-rolltemplate-damage .inlinerollresult,
+.sheet-rolltemplate-damage .inlinerollresult.fullcrit,
+.sheet-rolltemplate-damage .inlinerollresult.fullfail,
+.sheet-rolltemplate-damage .inlinerollresult.importantroll,
+.sheet-rolltemplate-deathsave .inlinerollresult,
+.sheet-rolltemplate-deathsave .inlinerollresult.fullcrit,
+.sheet-rolltemplate-deathsave .inlinerollresult.fullfail,
+.sheet-rolltemplate-deathsave .inlinerollresult.importantroll,
+.sheet-rolltemplate-initiative .inlinerollresult,
+.sheet-rolltemplate-initiative .inlinerollresult.fullcrit,
+.sheet-rolltemplate-initiative .inlinerollresult.fullfail,
+.sheet-rolltemplate-initiative .inlinerollresult.importantroll   {
+    border: none;
+    background: none;
+}
+
+
+.sheet-rolltemplate-skill div,
+.sheet-rolltemplate-attack div  {
+  padding: 2px;
+  text-align: center;
+}
+
+.sheet-rolltemplate-skill .sheet-template-crit{
+  color: green !important;
+}
+
+.sheet-rolltemplate-skill .inlinerollresult  {
+  display: inline-block;
+  font-family: 'Orbitron', Impact, sans-serif;
+  font-size: 18px;
+  min-width: 1.5em;
+  text-align: center;
+  border: 2px solid rgba(167, 168, 170,1);
+}
+
+.sheet-flex-table {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sheet-flex-table div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.sheet-main .sheet-flex-table div input{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border: none;
+  height: auto;
+  min-width:0
+}
+
+.sheet-main .sheet-flex-table div input[type=number]{
+  text-align: center;
+}
+
+.sheet-netrunning .sheet-flex-table input{
+  text-align: center;
+}
+
+.sheet-my-settings {
+  display: flex;
+}
+
+.sheet-settings-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sheet-my-settings div {
+  margin: 4px;
+  padding: 4px;
+}
+
+.sheet-option {
+  display: flex;
+  border: 1px solid #0f0f0f;
+}
+
+/* END OF CSS
+

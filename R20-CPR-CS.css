@@ -96,10 +96,11 @@ input[type=number] {
   font-weight: bold;
   color:darkred;
   background-color: aliceblue;
-  border: 2px solid darkred;
+  border: 0px solid darkred;
   border-radius: 0px 0px 10px 0px;
   font-size: 12px;
   text-align: bottom;
+  box-shadow: 1px 1px 2px black;
 }
 
 input[type=text] {
@@ -109,10 +110,11 @@ input[type=text] {
   margin: 0px 1px 1px 1px;
   color:darkred;
   background-color: aliceblue;
-  border: 2px solid darkred;
+  border: 0px solid darkred;
   border-radius: 0px 0px 20px 0px;
   font-size: 12px;
   font-weight: bold;
+    box-shadow: 1px 1px 2px black;
   
 }
 
@@ -124,10 +126,11 @@ select {
   padding: 2px 0px 0px 2px;
   color:darkred;
   background-color: aliceblue;
-  border: 2px solid darkred;
+  border: 0px solid darkred;
   border-radius: 0px 0px 20px 0px;
   font-size: 12px;
   font-weight: bold;
+    box-shadow: 1px 1px 2px black;
 }
 
 select.sheet-select-type {
@@ -138,10 +141,11 @@ select.sheet-select-type {
   padding: 2px 0px 0px 2px;
   color:darkred;
   background-color: aliceblue;
-  border: 2px solid darkred;
+  border: 0px solid darkred;
   border-radius: 0px 0px 20px 0px;
   font-size: 12px;
   font-weight: bold;
+    box-shadow: 1px 1px 2px black;
 }
 
 select.sheet-select-lifepath {
@@ -152,10 +156,11 @@ select.sheet-select-lifepath {
   padding: 2px 0px 0px 2px;
   color:darkred;
   background-color: aliceblue;
-  border: 2px solid darkred;
+  border: 0px solid darkred;
   border-radius: 0px 0px 20px 0px;
   font-size: 10px;
   font-weight: bold;
+    box-shadow: 1px 1px 2px black;
 }
 
 select.sheet-select-normal {
@@ -167,9 +172,10 @@ select.sheet-select-normal {
   padding: 2px 0px 0px 2px;
   color:darkred;
   background-color: aliceblue;
-  border: 2px solid darkred;
+  border: 0px solid darkred;
   border-radius: 0px 0px 20px 0px;
   font-size: 12px;
+    box-shadow: 1px 1px 2px black;
 }
 
 textarea {
@@ -177,7 +183,7 @@ textarea {
   text-transform: uppercase;
   max-width: 100%;
   box-sizing: border-box;
-  border: 2px solid darkred;
+  border: 1px solid darkred;
   border-radius: 10px 0px 10px 0px;
   background-color: aliceblue;
   font-size: 12px;
@@ -187,8 +193,13 @@ textarea {
   resize: none;
 }
 
+.sheet-txt-btn{
+    Background: ghostwhite;
+      box-shadow: 1px 1px 2px black;
+}
+
 button[type="roll"].sheet-txt-btn:before{
-  content: ' ';
+  content: '';
 }
 
 button[type="roll"].sheet-txt-btn{
@@ -196,9 +207,7 @@ button[type="roll"].sheet-txt-btn{
   vertical-align: top;
   box-shadow: 0px;
   height: 20px;
-  border: 2px solid darkred;
-  background-color: transparent;
-  background: 0px;
+  border: 0px solid darkred;
   margin: 0px 0px 2px 1px;
   font-size: 10px;
   font-weight: bold;
@@ -214,6 +223,11 @@ button[type="roll"].sheet-txt-btn:hover{
     border-radius: 10px 0px 5px 0px;
 }
 
+.sheet-info-btn{
+    Background: ghostwhite;
+      box-shadow: 1px 1px 2px black;
+}
+
 button[type="roll"].sheet-info-btn:before{
   content: "";
 }
@@ -223,13 +237,13 @@ button[type="roll"].sheet-info-btn{
   vertical-align: top;
   color: black;
   border: 0px;
-  background: 0px;
+
 }
 
 button[type="roll"].sheet-info-btn:hover{
     color: red;
     border: 0px;
-    background: 0px;
+
 }
 
 button[type="action"].sheet-txt-btn:before{
@@ -241,9 +255,7 @@ button[type="action"].sheet-txt-btn{
   vertical-align: top;
   box-shadow: 0px;
   height: 20px;
-  border: 2px solid darkred;
-  background-color: transparent;
-  background: 0px;
+  border: 0px solid darkred;
   margin: 0px 0px 2px 1px;
   font-size: 12px;
   font-weight: bold;
@@ -259,18 +271,22 @@ button[type="action"].sheet-txt-btn:hover{
     border-radius: 10px 0px 5px 0px;
 }
 
+.sheet-tab-btn{
+    Background: ghostwhite;
+      box-shadow: 1px 1px 2px black;
+}
+
 button[type="action"].sheet-tab-btn:before{
   content: ' ';
 }
 
 button[type="action"].sheet-tab-btn{
-    font-family: 'Orbitron', Impact, sans-serif;
+  font-family: 'Orbitron', Impact, sans-serif;
   text-align: bottom;
   vertical-align: top;
   box-shadow: 0px;
   height: 20px;
-  border: 2px solid darkred;
-  background-color: aliceblue;
+  border: 0px solid darkred;
   margin: 0px 0px 2px 1px;
   font-size: 12px;
   font-weight: bold;
@@ -301,7 +317,6 @@ button[type="action"].sheet-info-btn{
 button[type="action"].sheet-info-btn:hover{
     color: red;
     border: 0px;
-    background: 0px;
 }
 
 .content {
@@ -347,23 +362,24 @@ button[type="action"].sheet-info-btn:hover{
   font-weight: bold;
   padding: 2px;
   border: 2px solid black;
+  background: whitesmoke;
 }
 
 .sheet-box1{
     grid-area:box1;
     max-width: 260px;
-    background:white;
+    background: transparent;
 }
 .sheet-box2{
     grid-area: box2;
     max-width: 150px;
-    background:white;
+    background: transparent;
 }
 
 .sheet-box3{
     grid-area: box3;
     max-width: 410px;
-    background:white;
+    background:transparent;
 }
 
 .sheet-box4{
@@ -371,8 +387,17 @@ button[type="action"].sheet-info-btn:hover{
     overflow: auto;
     white-space: nowrap;
     max-width: 600px;
-    background:white;
+    background:transparent;
 }
+
+.sheet-box7{
+    grid-area: box7;
+    overflow: auto;
+    white-space: nowrap;
+    max-width: 600px;
+    background:transparent;
+}
+
 
 .sheet-skillgrid{
     display:grid;
@@ -401,7 +426,7 @@ button[type="action"].sheet-info-btn:hover{
 .sheet-box5{
     grid-area: box5;
     max-width: 410px;
-    background:white;
+    background:transparent;
 }
 
 .sheet-box6{
@@ -410,7 +435,7 @@ button[type="action"].sheet-info-btn:hover{
     white-space: nowrap;
     max-height: 370px;
     max-width: 410px;
-    background:white;
+    background:transparent;
 }
 
 .sheet-grid3 {
@@ -446,52 +471,53 @@ button[type="action"].sheet-info-btn:hover{
   font-family: 'Oswald', arial, helvetica, sans-serif;
   font-size: 12px;
   font-weight: bold;
+    padding: 1px;
 }
 
 
 .sheet-lpbox{
     grid-area:lpbox;
-    background:white;
+    background:transparent;
     overflow: auto;
 }
 
 .sheet-ra{
     grid-area:ra;
-    background:white;
+    background:transparent;
 }
 .sheet-lp{
     grid-area:lp;
-    background:white;
+    background:transparent;
 }
 
 .sheet-lp2{
     grid-area:lp2;
-    background:white;
+    background:transparent;
 }
 
 .sheet-lptab{
     grid-area:lptab;
-    background:white;
+    background:transparent;
 }
 
 .sheet-fr{
     grid-area:fr;
-    background:white;
+    background:transparent;
 }
 
 .sheet-tl{
     grid-area:tl;
-    background:white;
+    background:transparent;
 }
 
 .sheet-en{
     grid-area:en;
-    background:white;
+    background:transparent;
 }
 
 .sheet-rlp{
     grid-area:rlp;
-    background:white;
+    background:transparent;
 }
 
 .sheet-netrunner {
@@ -514,22 +540,22 @@ button[type="action"].sheet-info-btn:hover{
 
 .sheet-actions{
     grid-area:actions;
-    background:white;
+    background:transparent;
 }
 
 .sheet-deck{
     grid-area:deck;
-    background:white;
+    background:transparent;
 }
 
 .sheet-hardware{
     grid-area:hardware;
-    background:white;
+    background:transparent;
 }
 
 .sheet-software{
     grid-area:software;
-    background:white;
+    background:transparent;
 }
 
 /*----------------- ROLL TEMPLATES ------------------*/
@@ -838,5 +864,216 @@ button[type="action"].sheet-info-btn:hover{
   border: 1px solid #0f0f0f;
 }
 
+@media only screen and (max-width: 600px) {
+    .sheet-wrapper {
+        min-width:320px;
+    }
+
+  .sheet-grid {
+  display: grid;
+   grid-template-columns: 260px 150px;
+   grid-template-areas: 
+   "box1 box2 box7"
+   "box3 box2 box4"
+   "box7 box7 box4"
+   "box4 box4 box4"
+   ". . box4";
+    align-items: start;
+    width: 100%;
+    min-width: 1010px;
+    max-width: 1010px;
+  font-family: 'Oswald', arial, helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px;
+  border: 2px solid black;
+}
+
+.sheet-box1{
+    grid-area:box1;
+    max-width: 260px;
+    background:white;
+}
+.sheet-box2{
+    grid-area: box2;
+    max-width: 150px;
+    background:white;
+}
+
+.sheet-box3{
+    grid-area: box3;
+    max-width: 410px;
+    background:white;
+}
+
+.sheet-box4{
+    grid-area: box4;
+    overflow: auto;
+    white-space: nowrap;
+    max-width: 600px;
+    background:white;
+}
+
+.sheet-skillgrid{
+    display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2px;
+  padding: 1px;
+
+}
+
+.sheet-skillgrid2{
+    display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2px;
+  padding: 1px;
+
+}
+
+.sheet-skillgrid3{
+    display:grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 2px;
+  padding: 1px;
+
+}
+
+.sheet-box5{
+    grid-area: box5;
+    max-width: 410px;
+    background:white;
+}
+
+.sheet-box6{
+    grid-area: box6;
+    overflow: auto;
+    white-space: nowrap;
+    max-height: 370px;
+    max-width: 410px;
+    background:white;
+}
+
+.sheet-grid3 {
+   grid-template-columns: 400px 610px;
+   grid-template-areas: 
+    "ra lpbox"
+    ". .";
+     display: grid;
+  width: 100%;
+  min-width: 1010px;
+  max-width: 1010px;
+  font-family: 'Oswald', arial, helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  border: 2px solid black;
+}
+
+.sheet-grid3 > div{
+    padding:2px;
+}
+
+.sheet-gridlp {
+   grid-template-columns: 200px 200px 200px;
+   grid-template-areas: 
+    "lptab lptab lptab"
+    "lp lp2 en"
+    "fr tl en"
+    " . . .";
+    display: grid;
+  width: 100%;
+  min-width: 600px;
+  max-width: 600px;
+  font-family: 'Oswald', arial, helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+.sheet-lpbox{
+    grid-area:lpbox;
+    background:white;
+    overflow: auto;
+}
+
+.sheet-ra{
+    grid-area:ra;
+    background:white;
+}
+.sheet-lp{
+    grid-area:lp;
+    background:white;
+}
+
+.sheet-lp2{
+    grid-area:lp2;
+    background:white;
+}
+
+.sheet-lptab{
+    grid-area:lptab;
+    background:white;
+}
+
+.sheet-fr{
+    grid-area:fr;
+    background:white;
+}
+
+.sheet-tl{
+    grid-area:tl;
+    background:white;
+}
+
+.sheet-en{
+    grid-area:en;
+    background:white;
+}
+
+.sheet-rlp{
+    grid-area:rlp;
+    background:white;
+}
+
+.sheet-netrunner {
+   grid-template-columns: 165px 165px;
+   grid-template-areas: 
+    "actions deck"
+    "hardware hardware"
+    "software software"
+    ". . . .";
+     display: grid;
+  width: 100%;
+  min-width: 380px;
+  max-width: 380px;
+
+  font-family: 'Oswald', arial, helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  border: 2px solid black;
+}
+
+.sheet-actions{
+    grid-area:actions;
+    background:white;
+}
+
+.sheet-deck{
+    grid-area:deck;
+    background:white;
+}
+
+.sheet-hardware{
+    grid-area:hardware;
+    background:white;
+}
+
+.sheet-software{
+    grid-area:software;
+    background:white;
+}
+
+}
+
 /* END OF CSS
+
 

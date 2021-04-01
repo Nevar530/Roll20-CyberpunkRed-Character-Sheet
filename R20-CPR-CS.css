@@ -23,6 +23,8 @@
   display: none;
 }
 
+/*----------------- FORMATING ------------------*/
+
 hr{
   display: block;
   margin-top: 1px;
@@ -90,6 +92,8 @@ h3{
   padding:0px 0px 20px 5px;
 }
 
+/*----------------- NUMBER INPUTS ------------------*/
+
 input[type=number] {
   width: 10px;
   height: 20px;
@@ -110,6 +114,8 @@ input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
+/*----------------- TEXT INPUTS ------------------*/
+
 input[type=text] {
   text-transform: uppercase;
   width: 20px;
@@ -124,6 +130,23 @@ input[type=text] {
     box-shadow: 1px 1px 2px black;
   
 }
+
+textarea {
+  padding: 2px 2px;
+  text-transform: uppercase;
+  max-width: 100%;
+  box-sizing: border-box;
+  border: 1px solid darkred;
+  border-radius: 10px 0px 10px 0px;
+  background-color: aliceblue;
+  font-size: 12px;
+  font-weight: bold;
+  color: darkred;
+  margin:1px;
+  resize: none;
+}
+
+/*----------------- PULL DOWN MENUS ------------------*/
 
 select {
   font-family: 'Orbitron', Impact, sans-serif;
@@ -185,20 +208,7 @@ select.sheet-select-normal {
     box-shadow: 1px 1px 2px black;
 }
 
-textarea {
-  padding: 2px 2px;
-  text-transform: uppercase;
-  max-width: 100%;
-  box-sizing: border-box;
-  border: 1px solid darkred;
-  border-radius: 10px 0px 10px 0px;
-  background-color: aliceblue;
-  font-size: 12px;
-  font-weight: bold;
-  color: darkred;
-  margin:1px;
-  resize: none;
-}
+/*----------------- BUTTONS ------------------*/
 
 .sheet-txt-btn{
     Background: ghostwhite;
@@ -325,30 +335,15 @@ button[type="action"].sheet-info-btn:hover{
     border: 0px;
 }
 
+/*----------------- LAYOUT BASIC ------------------*/
+
 .content {
     width: 100%;
     min-width: 400px;
     max-width: 400px;
 }
 
-.sheet-rolltemplate-default caption {
-  font-family: 'Orbitron', Impact, sans-serif;
-  text-transform: uppercase;
-  color: white;
-  background: darkred;
-  background: linear-gradient(145deg, darkred 50%, black 100%);
-  height: 20px;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: left;
-  border-radius: 20px 0px 40px 0px;
-  padding:1px 0px 0px 10px;
-}
-
-.sheet-rolltemplate-default{
-  text-transform: uppercase;
-  font-family: 'Oswald', arial, helvetica, sans-serif;
-}
+/*----------------- CHARACTER TAB GRIDS ------------------*/
 
 .sheet-grid {
   display: grid;
@@ -422,6 +417,8 @@ button[type="action"].sheet-info-btn:hover{
   padding: 1px;
 
 }
+
+/*----------------- INFORMATION TAB GRIDS ------------------*/
 
 .sheet-grid3 {
    grid-template-columns: 400px;
@@ -545,6 +542,50 @@ button[type="action"].sheet-info-btn:hover{
 
 /*----------------- ROLL TEMPLATES ------------------*/
 
+.sheet-rolltemplate-default caption {
+  font-family: 'Orbitron', Impact, sans-serif;
+  text-transform: uppercase;
+  color: white;
+  background: darkred;
+  background: linear-gradient(145deg, darkred 50%, black 100%);
+  height: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  border-radius: 0px 40px 0px 0px;
+  padding:1px 0px 0px 10px;
+}
+
+.sheet-rolltemplate-default{
+  text-transform: uppercase;
+  font-family: 'Oswald', Impact, sans-serif;
+}
+
+.sheet-rolltemplate-default .inlinerollresult  {
+	display: inline-block;
+	font-family: 'Orbitron', Impact, sans-serif;
+	color: white;
+    font-size: 14px;
+	min-width: 1.5em;
+	background: black;
+	text-align: center;
+	border: 2px solid rgba(167, 168, 170,1);
+	border-radius: 10px 10px 10px 10px;
+}
+
+.sheet-rolltemplate-default .inlinerollresult.fullcrit {
+	background: #3FB315;
+}
+
+.sheet-rolltemplate-default .inlinerollresult.fullfail {
+	background: #B31515;
+}
+
+.sheet-rolltemplate-default .inlinerollresult.importantroll {
+	background: #4A57ED;
+}
+
+
 .sheet-rolltemplate-skill, .sheet-rolltemplate-damage, .sheet-rolltemplate-attack, .sheet-rolltemplate-deathsave, .sheet-rolltemplate-initiative {
   font-family: 'Orbitron', sans-serif;
   font-weight: bold;
@@ -641,33 +682,31 @@ button[type="action"].sheet-info-btn:hover{
   align-items: center;
 }
 
-.sheet-template-damage {
+.sheet-template-damage div.sheet-template-container{
   border: none !important;
   font-family: 'Orbitron', Impact, sans-serif;
-  color: #fff;
+  background: darkred;
   font-size: 14px;
   font-weight: bold;
+  color: white !important;
   text-align: left;
   border-radius: 0px 0px 40px 0px;
   padding:0px 0px 0px 0px;
-}
+}  
 
 
 .sheet-rolltemplate-skill .sheet-normal,
-.sheet-rolltemplate-damage .sheet-normal,
 .sheet-rolltemplate-attack .sheet-normal {
   background: darkred;
   background: linear-gradient(145deg, darkred 50%, black 100%);
 }
 
 .sheet-rolltemplate-skill .sheet-crit,
-.sheet-rolltemplate-damage .sheet-crit,
 .sheet-rolltemplate-attack .sheet-crit{
   background: #00B050;
 }
 
 .sheet-rolltemplate-skill .sheet-fail,
-.sheet-rolltemplate-damage .sheet-fail,
 .sheet-rolltemplate-attack .sheet-fail {
   background: #CD272C;
 }

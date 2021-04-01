@@ -26,7 +26,10 @@
                     <button type="roll" name="repbutton" value="&{template:skill} {{handle=@{character_name}}} {{rollname=Facedown}} {{critroll=[[10 + 1d10 + @{rep} + @{swmod} + @{extra} + @{rollmod}]]}} {{failroll=[[1 - 1d10 + @{rep} + @{swmod} + @{extra} + @{rollmod}]]}} {{roll=[[1d10 + @{rep} + @{swmod} + @{extra} + @{rollmod}]]}}" class="txt-btn large">FACEDOWN</button> REP <input type="number" name="attr_rep" value="0" />
                     IP <input type="number" name="attr_ip" style="width: 40px;" value="0" /> EB <input type="number" name="attr_euro" style="width: 60px;" value="0" /><br>
                     <h2>VITALS</h2>
-                    ARMOR: HEAD <input type="number" style="width: 20px;" name="attr_headarmor" value="@{ar1}" disabled/> BODY <input type="number" style="width: 20px;" name="attr_bodyarmor" value="@{ar2}" disabled/> SHIELD <input type="number" style="width: 20px;" name="attr_shield" value="@{ar3}" disabled/>  CYBER <input type="number" style="width: 20px;" name="attr_cyberarmor" value="@{ar4}" disabled/><br>
+                    <button type="action" name="act_head" style="width: 26px;" class="txt-btn">HEAD</button><input type="number" style="width: 20px;" name="attr_headarmor" value="@{ar1}" disabled/> 
+                    <button type="action" name="act_body" style="width: 26px;" class="txt-btn">BODY</button><input type="number" style="width: 20px;" name="attr_bodyarmor" value="@{ar2}" disabled/> 
+                    <button type="action" name="act_shield" style="width: 33px;" class="txt-btn">SHIELD</button><input type="number" style="width: 20px;" name="attr_shield" value="@{ar3}" disabled/>  
+                    <button type="action" name="act_cyber" style="width: 30px;" class="txt-btn">CYBER</button><input type="number" style="width: 20px;" name="attr_cyberarmor" value="@{ar4}" disabled/><br>
                     <button type="roll" name="initbutton" value="&{template:skill} {{handle=@{character_name}}} {{rollname=Initiative}} {{critroll=[[1d10 + 10 + @{init} &{tracker}]]}} {{failroll=[[1 - 1d10 + @{init} &{tracker}]]}} {{roll=[[1d10 + @{init} &{tracker}]]}}" class="txt-btn large"> INITIATIVE ROLL</button><input type="number" style="width: 20px;" name="attr_init" value="@{init}"/> 
                     | MOVEMENT <input type="number" style="width: 20px;" name="attr_moveallow" value="attr_moveallow" /> METERS <br>
                     HEALTH <input type="number" style="width: 20px;" name="attr_hp" value="0" /> / <input type="number" style="width: 20px;" name="attr_hp_max" value="attr_hp_max"/>
@@ -216,14 +219,14 @@
                             </select><br>
                             ACCURACY <input type="number" name="attr_acc" style="width: 20px;" value="0"/>
                             DAMAGE <select name="attr_DMG" style="width: 50px;" class="select-lifepath">
-                                <option value="&{template:damage} {{result=[[1d6sd]]}}">1d6</option>
-                                <option value="&{template:damage} {{result=[[2d6sd]]}}">2d6</option>
-                                <option value="&{template:damage} {{result=[[3d6sd]]}}">3d6</option>
-                                <option value="&{template:damage} {{result=[[4d6sd]]}}">4d6</option>
-                                <option value="&{template:damage} {{result=[[5d6sd]]}}">5d6</option>
-                                <option value="&{template:damage} {{result=[[6d6sd]]}}">6d6</option>
-                                <option value="&{template:damage} {{result=[[7d6sd]]}}">7d6</option>
-                                <option value="&{template:damage} {{result=[[8d6sd]]}}">8d6</option>
+                                <option value="&{template:default} {{name=1d6 Damage}} {{@{character_name} [[1d6sd]]}}">1d6</option>
+                                <option value="&{template:default} {{name=2d6 Damage}} {{@{character_name} [[2d6sd]]}}">2d6</option>
+                                <option value="&{template:default} {{name=3d6 Damage}} {{@{character_name} [[3d6sd]]}}">3d6</option>
+                                <option value="&{template:default} {{name=4d6 Damage}} {{@{character_name} [[4d6sd]]}}">4d6</option>
+                                <option value="&{template:default} {{name=5d6 Damage}} {{@{character_name} [[5d6sd]]}}">5d6</option>
+                                <option value="&{template:default} {{name=6d6 Damage}} {{@{character_name} [[6d6sd]]}}">6d6</option>
+                                <option value="&{template:default} {{name=7d6 Damage}} {{@{character_name} [[7d6sd]]}}">7d6</option>
+                                <option value="&{template:default} {{name=8d6 Damage}} {{@{character_name} [[8d6sd]]}}">8d6</option>
                             </select>
                             CLIP <input type="number" name="attr_clip" style="width: 30px;" value="@{clip}"/> / <input type="number" name="attr_clip|max" style="width: 30px;" value="@{clip}"/>
                             RATE OF FIRE <input type="number" name="attr_rof" style="width: 20px;" value="0" />
@@ -3126,12 +3129,6 @@ on("clicked:execute", function(){
 	{{/Martial Arts}}
 	
 	{{/Brawling}}
-</rolltemplate>
-
-<rolltemplate class="sheet-rolltemplate-damage">
-	<div class="sheet-template-container">
-		<div class="sheet-template-damage"><span>{{result}} damage</span></div>
-	</div>
 </rolltemplate>
 
 <script type="text/worker">

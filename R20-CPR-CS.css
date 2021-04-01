@@ -1,15 +1,17 @@
+{
+    "legacy": false
+}
+
 @import url('https://fonts.googleapis.com/css?family=Oswald|Orbitron&display=swap');
 
 /*Configure the tab buttons*/
 .sheet-character,
-.sheet-config,
 .sheet-journal {
-    display: none
+	display: none;
 }
 
 /* show the selected tab */
 .sheet-tabstoggle[value="character"] ~ div.sheet-character,
-.sheet-tabstoggle[value="configuration"] ~ div.sheet-config,
 .sheet-tabstoggle[value="journal"] ~ div.sheet-journal {
 	display: block;
 }
@@ -89,7 +91,7 @@ h3{
 }
 
 input[type=number] {
-  width: 20px;
+  width: 10px;
   height: 20px;
   margin: 0px 0px 6px 0px;
   text-align: right;
@@ -101,6 +103,11 @@ input[type=number] {
   font-size: 12px;
   text-align: bottom;
   box-shadow: 1px 1px 2px black;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
 input[type=text] {
@@ -128,7 +135,7 @@ select {
   background-color: aliceblue;
   border: 0px solid darkred;
   border-radius: 0px 0px 20px 0px;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
     box-shadow: 1px 1px 2px black;
 }
@@ -271,27 +278,25 @@ button[type="action"].sheet-txt-btn:hover{
     border-radius: 10px 0px 5px 0px;
 }
 
-.sheet-tab-btn{
-    Background: ghostwhite;
-      box-shadow: 1px 1px 2px black;
-}
-
 button[type="action"].sheet-tab-btn:before{
   content: ' ';
 }
 
 button[type="action"].sheet-tab-btn{
-  font-family: 'Orbitron', Impact, sans-serif;
+    font-family: 'Orbitron', Impact, sans-serif;
   text-align: bottom;
   vertical-align: top;
   box-shadow: 0px;
   height: 20px;
-  border: 0px solid darkred;
+  border: 2px solid darkred;
+  background-color: aliceblue;
   margin: 0px 0px 2px 1px;
   font-size: 12px;
   font-weight: bold;
   border-radius: 10px 0px 5px 0px;
   padding: 0px 2px 0px 2px;
+      Background: ghostwhite;
+      box-shadow: 1px 1px 2px black;
   
 }
 
@@ -302,8 +307,9 @@ button[type="action"].sheet-tab-btn:hover{
     border-radius: 10px 0px 5px 0px;
 }
 
+
 button[type="action"].sheet-info-btn:before{
-  content: "";
+  content: ' ';
 }
 
 button[type="action"].sheet-info-btn{
@@ -321,8 +327,8 @@ button[type="action"].sheet-info-btn:hover{
 
 .content {
     width: 100%;
-    min-width: 1000px;
-    max-width: 1000px;
+    min-width: 400px;
+    max-width: 400px;
 }
 
 .sheet-rolltemplate-default caption {
@@ -346,17 +352,15 @@ button[type="action"].sheet-info-btn:hover{
 
 .sheet-grid {
   display: grid;
-   grid-template-columns: 260px 150px 600px;
+   grid-template-columns: 250px 150px;
    grid-template-areas: 
-   "box1 box2 box7"
-   "box3 box2 box4"
-   "box5 box5 box4"
-   "box6 box6 box4"
-   ". . box4";
-    align-items: start;
+   "box1 box2"
+   "box7 box7"
+   "box4 Box4"
+   ". .";
     width: 100%;
-    min-width: 1010px;
-    max-width: 1010px;
+    min-width: 400px;
+    max-width: 400px;
   font-family: 'Oswald', arial, helvetica, sans-serif;
   font-size: 12px;
   font-weight: bold;
@@ -367,26 +371,22 @@ button[type="action"].sheet-info-btn:hover{
 
 .sheet-box1{
     grid-area:box1;
-    max-width: 260px;
+    text-align:center;
+    max-width: 250px;
     background: transparent;
 }
 .sheet-box2{
     grid-area: box2;
+    text-align:center;
     max-width: 150px;
     background: transparent;
-}
-
-.sheet-box3{
-    grid-area: box3;
-    max-width: 410px;
-    background:transparent;
 }
 
 .sheet-box4{
     grid-area: box4;
     overflow: auto;
     white-space: nowrap;
-    max-width: 600px;
+    max-width: 400px;
     background:transparent;
 }
 
@@ -394,12 +394,12 @@ button[type="action"].sheet-info-btn:hover{
     grid-area: box7;
     overflow: auto;
     white-space: nowrap;
-    max-width: 600px;
+    max-width: 400px;
     background:transparent;
 }
 
 
-.sheet-skillgrid{
+.sheet-skillgrid {
     display:grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2px;
@@ -407,7 +407,7 @@ button[type="action"].sheet-info-btn:hover{
 
 }
 
-.sheet-skillgrid2{
+.sheet-skillgrid2 {
     display:grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2px;
@@ -415,7 +415,7 @@ button[type="action"].sheet-info-btn:hover{
 
 }
 
-.sheet-skillgrid3{
+.sheet-skillgrid3 {
     display:grid;
   grid-template-columns: 1fr 3fr;
   grid-gap: 2px;
@@ -423,30 +423,15 @@ button[type="action"].sheet-info-btn:hover{
 
 }
 
-.sheet-box5{
-    grid-area: box5;
-    max-width: 410px;
-    background:transparent;
-}
-
-.sheet-box6{
-    grid-area: box6;
-    overflow: auto;
-    white-space: nowrap;
-    max-height: 370px;
-    max-width: 410px;
-    background:transparent;
-}
-
 .sheet-grid3 {
-   grid-template-columns: 400px 610px;
+   grid-template-columns: 400px;
    grid-template-areas: 
-    "ra lpbox"
-    ". .";
+    "ra"
+    "lpbox";
      display: grid;
   width: 100%;
-  min-width: 1010px;
-  max-width: 1010px;
+  min-width: 400px;
+  max-width: 400px;
   font-family: 'Oswald', arial, helvetica, sans-serif;
   font-size: 12px;
   font-weight: bold;
@@ -458,16 +443,16 @@ button[type="action"].sheet-info-btn:hover{
 }
 
 .sheet-gridlp {
-   grid-template-columns: 200px 200px 200px;
+   grid-template-columns: 200px 200px;
    grid-template-areas: 
-    "lptab lptab lptab"
-    "lp lp2 en"
-    "fr tl en"
-    " . . .";
+    "lptab lptab"
+    "lp lp2"
+    "fr tl"
+    "en en";
     display: grid;
   width: 100%;
-  min-width: 600px;
-  max-width: 600px;
+  min-width: 400px;
+  max-width: 400px;
   font-family: 'Oswald', arial, helvetica, sans-serif;
   font-size: 12px;
   font-weight: bold;
@@ -656,11 +641,9 @@ button[type="action"].sheet-info-btn:hover{
   align-items: center;
 }
 
-.sheet-rolltemplate-damage div.sheet-template-container {
+.sheet-template-damage {
   border: none !important;
   font-family: 'Orbitron', Impact, sans-serif;
-  background: darkred;
-  background: linear-gradient(145deg, darkred 50%, black 100%);
   color: #fff;
   font-size: 14px;
   font-weight: bold;
@@ -669,25 +652,22 @@ button[type="action"].sheet-info-btn:hover{
   padding:0px 0px 0px 0px;
 }
 
-.sheet-rolltemplate-damage div.sheet-template-damage {
-  line-height: auto;
-  font-size: 16px;
-  text-align: center;
-  padding: 4px;
-}
 
 .sheet-rolltemplate-skill .sheet-normal,
+.sheet-rolltemplate-damage .sheet-normal,
 .sheet-rolltemplate-attack .sheet-normal {
   background: darkred;
   background: linear-gradient(145deg, darkred 50%, black 100%);
 }
 
 .sheet-rolltemplate-skill .sheet-crit,
+.sheet-rolltemplate-damage .sheet-crit,
 .sheet-rolltemplate-attack .sheet-crit{
   background: #00B050;
 }
 
 .sheet-rolltemplate-skill .sheet-fail,
+.sheet-rolltemplate-damage .sheet-fail,
 .sheet-rolltemplate-attack .sheet-fail {
   background: #CD272C;
 }
@@ -749,14 +729,20 @@ button[type="action"].sheet-info-btn:hover{
 .sheet-rolltemplate-attack a[href^="~"] {
   background-color: transparent;
   padding: 0px;
-  border: 0px; }
+  border: 0px;
+    
+}
 
 .sheet-rolltemplate-attack a:hover {
-  text-decoration: underline !important; }
+  text-decoration: underline !important;
+    
+}
 
 
 .sheet-rolltemplate-attack a:visited {
-  pointer-events: none;  }
+  pointer-events: none; 
+    
+}
 
 
 .sheet-rolltemplate-skill .sheet-template-header span,
@@ -864,216 +850,5 @@ button[type="action"].sheet-info-btn:hover{
   border: 1px solid #0f0f0f;
 }
 
-@media only screen and (max-width: 600px) {
-    .sheet-wrapper {
-        min-width:320px;
-    }
-
-  .sheet-grid {
-  display: grid;
-   grid-template-columns: 260px 150px;
-   grid-template-areas: 
-   "box1 box2 box7"
-   "box3 box2 box4"
-   "box7 box7 box4"
-   "box4 box4 box4"
-   ". . box4";
-    align-items: start;
-    width: 100%;
-    min-width: 1010px;
-    max-width: 1010px;
-  font-family: 'Oswald', arial, helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 2px;
-  border: 2px solid black;
-}
-
-.sheet-box1{
-    grid-area:box1;
-    max-width: 260px;
-    background:white;
-}
-.sheet-box2{
-    grid-area: box2;
-    max-width: 150px;
-    background:white;
-}
-
-.sheet-box3{
-    grid-area: box3;
-    max-width: 410px;
-    background:white;
-}
-
-.sheet-box4{
-    grid-area: box4;
-    overflow: auto;
-    white-space: nowrap;
-    max-width: 600px;
-    background:white;
-}
-
-.sheet-skillgrid{
-    display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 2px;
-  padding: 1px;
-
-}
-
-.sheet-skillgrid2{
-    display:grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2px;
-  padding: 1px;
-
-}
-
-.sheet-skillgrid3{
-    display:grid;
-  grid-template-columns: 1fr 3fr;
-  grid-gap: 2px;
-  padding: 1px;
-
-}
-
-.sheet-box5{
-    grid-area: box5;
-    max-width: 410px;
-    background:white;
-}
-
-.sheet-box6{
-    grid-area: box6;
-    overflow: auto;
-    white-space: nowrap;
-    max-height: 370px;
-    max-width: 410px;
-    background:white;
-}
-
-.sheet-grid3 {
-   grid-template-columns: 400px 610px;
-   grid-template-areas: 
-    "ra lpbox"
-    ". .";
-     display: grid;
-  width: 100%;
-  min-width: 1010px;
-  max-width: 1010px;
-  font-family: 'Oswald', arial, helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-  border: 2px solid black;
-}
-
-.sheet-grid3 > div{
-    padding:2px;
-}
-
-.sheet-gridlp {
-   grid-template-columns: 200px 200px 200px;
-   grid-template-areas: 
-    "lptab lptab lptab"
-    "lp lp2 en"
-    "fr tl en"
-    " . . .";
-    display: grid;
-  width: 100%;
-  min-width: 600px;
-  max-width: 600px;
-  font-family: 'Oswald', arial, helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-
-.sheet-lpbox{
-    grid-area:lpbox;
-    background:white;
-    overflow: auto;
-}
-
-.sheet-ra{
-    grid-area:ra;
-    background:white;
-}
-.sheet-lp{
-    grid-area:lp;
-    background:white;
-}
-
-.sheet-lp2{
-    grid-area:lp2;
-    background:white;
-}
-
-.sheet-lptab{
-    grid-area:lptab;
-    background:white;
-}
-
-.sheet-fr{
-    grid-area:fr;
-    background:white;
-}
-
-.sheet-tl{
-    grid-area:tl;
-    background:white;
-}
-
-.sheet-en{
-    grid-area:en;
-    background:white;
-}
-
-.sheet-rlp{
-    grid-area:rlp;
-    background:white;
-}
-
-.sheet-netrunner {
-   grid-template-columns: 165px 165px;
-   grid-template-areas: 
-    "actions deck"
-    "hardware hardware"
-    "software software"
-    ". . . .";
-     display: grid;
-  width: 100%;
-  min-width: 380px;
-  max-width: 380px;
-
-  font-family: 'Oswald', arial, helvetica, sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-  border: 2px solid black;
-}
-
-.sheet-actions{
-    grid-area:actions;
-    background:white;
-}
-
-.sheet-deck{
-    grid-area:deck;
-    background:white;
-}
-
-.sheet-hardware{
-    grid-area:hardware;
-    background:white;
-}
-
-.sheet-software{
-    grid-area:software;
-    background:white;
-}
-
-}
-
 /* END OF CSS
-
 

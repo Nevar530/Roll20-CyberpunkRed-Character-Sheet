@@ -230,6 +230,7 @@
                             </select>
                             CLIP <input type="number" name="attr_clip" style="width: 30px;" value="@{clip}"/> / <input type="number" name="attr_clip|max" style="width: 30px;" value="@{clip}"/>
                             RATE OF FIRE <input type="number" name="attr_rof" style="width: 20px;" value="0" />
+                            <hr>
                         </fieldset>
                     </div>
 
@@ -260,7 +261,9 @@
                             STRUCTURAL DAMAGE POINT <input name="attr_vsdp" type="number" style="width: 25px;"/> / <input name="attr_vsdpmax" type="number" style="width: 25px;"/>
                             SEATS <input name="attr_vseats" type="number" style="width: 20px;"/>
                             SPEED <input name="attr_vcspd" type="number" style="width: 30px;"/> MPR | <input name="attr_vnspd" type="number" style="width: 30px;"/> MPH<br>
+                        <hr>
                         </fieldset>
+                        
                     </div>
 
                     <input type="checkbox" name="attr_menu" value="f" class="sheet-hidden sheet-hider">
@@ -293,7 +296,8 @@
                             </select>
                             HL<input name="attr_cybereyehl" type="number" style="width: 20px;"/><br>
                             <textarea name="attr_cybernotes" style="height: 45px; width: 190px;" value="">
-                            </textarea>             
+                            </textarea>   
+                            <hr>
                         </fieldset><br>
                         </div>
                         <div>
@@ -309,7 +313,8 @@
                             </select>
                             HL<input name="attr_cybereyehl2" type="number" style="width: 20px;"/><br>
                             <textarea name="attr_cybernotes2" style="height: 45px; width: 190px;" value="">
-                            </textarea>             
+                            </textarea>
+                            <hr>
                         </fieldset><br>
                         </div>
                         </div>
@@ -339,47 +344,49 @@
                         </select><br>
                         <input type="checkbox" name="attr_cdmenu" value="a" class="sheet-hidden sheet-hider" checked>
                         <div class="sheet-block-a">
-                            PROGRAMS ▶ LOADED | PROGRAM | CLASS | ATK | DEF | REZ/MAX REZ    
+                            PROGRAMS ▶   
                             <fieldset class="repeating_programs">
-                                <input type="checkbox" name="attr_loaded" value="0"/>
-                                <input name="attr_program" type="text" style="width: 100px;"/>
-                                <select name="attr_pclass" style="width: 75px;" class="select-lifepath">
+                                LOADED <input type="checkbox" name="attr_loaded" value="0"/>
+                                PROGRAM <input name="attr_program" type="text" style="width: 280px;"/><br>
+                                CLASS <select name="attr_pclass" style="width: 100px;" class="select-lifepath">
                                     <option value="00"></option>
                                     <option value="01">BOOSTER</option>
                                     <option value="02">DEFENDER</option>
                                     <option value="03">ATTACKER</option>
                                 </select>
-                                <input name="attr_patk" type="number" style="width: 40px;" value=""/>
-                                <input name="attr_pdef" type="number" style="width: 40px;" value=""/>
-                                <input name="attr_prez" type="number" style="width: 40px;" value=""/> / <input name="attr_prez|max" type="number" style="width: 40px;" value=""/><br>
-                                <button type="roll" name="roll_patk" style="width: 30px;" class="txt-btn" value="&{template:skill} {{handle=@{character_name}}} {{rollname=@{program}}} {{critroll=[[10 + 1d10 + @{interfaceskill} + @{patk} + @{swmod} + @{extra} + @{rollmod}]]}} {{failroll=[[1 - 1d10 + @{interfaceskill} + @{patk} + @{swmod} + @{extra} + @{rollmod}]]}} {{roll=[[1d10 + @{interfaceskill} + @{patk} + @{swmod} + @{extra} + @{rollmod}]]}}">ATK</button>
-                                <button type="roll" name="roll_pdef" style="width: 30px;" class="txt-btn" value="&{template:skill} {{handle=@{character_name}}} {{rollname=@{program}}} {{critroll=[[10 + 1d10 + @{interfaceskill} + @{pdef} + @{swmod} + @{extra} + @{rollmod}]]}} {{failroll=[[1 - 1d10 + @{interfaceskill} + @{pdef} + @{swmod} + @{extra} + @{rollmod}]]}} {{roll=[[1d10 + @{interfaceskill} + @{pdef} + @{swmod} + @{extra} + @{rollmod}]]}}">DEF</button>
-                                <textarea name="attr_programnotes" style="height: 23px; width: 280px;" value="">
+                                <button type="roll" name="roll_patk" style="width: 40px;" class="txt-btn" value="&{template:skill} {{handle=@{character_name}}} {{rollname=@{program}}} {{critroll=[[10 + 1d10 + @{interfaceskill} + @{patk} + @{swmod} + @{extra} + @{rollmod}]]}} {{failroll=[[1 - 1d10 + @{interfaceskill} + @{patk} + @{swmod} + @{extra} + @{rollmod}]]}} {{roll=[[1d10 + @{interfaceskill} + @{patk} + @{swmod} + @{extra} + @{rollmod}]]}}">ATTACK</button>
+                                <input name="attr_patk" type="number" style="width: 30px;" value=""/>
+                                <button type="roll" name="roll_pdef" style="width: 40px;" class="txt-btn" value="&{template:skill} {{handle=@{character_name}}} {{rollname=@{program}}} {{critroll=[[10 + 1d10 + @{interfaceskill} + @{pdef} + @{swmod} + @{extra} + @{rollmod}]]}} {{failroll=[[1 - 1d10 + @{interfaceskill} + @{pdef} + @{swmod} + @{extra} + @{rollmod}]]}} {{roll=[[1d10 + @{interfaceskill} + @{pdef} + @{swmod} + @{extra} + @{rollmod}]]}}">DEFEND</button>
+                                <input name="attr_pdef" type="number" style="width: 30px;" value=""/>
+                                REZ <input name="attr_prez" type="number" style="width: 30px;" value=""/> / <input name="attr_prez|max" type="number" style="width: 30px;" value=""/><br>
+                                <textarea name="attr_programnotes" style="height: 23px; width: 380px;" value="">
                                 </textarea>
+                                <hr>
                             </fieldset><br>
                         </div>
                         <input type="checkbox" name="attr_cdmenu" value="b" class="sheet-hidden sheet-hider">
                         <div class="sheet-block-b">
-                            BLACK ICE ▶ LOADED | PROGRAM | CLASS | PERCEPTION | SPEED | ATK | DEF | REZ/MAX REZ    
+                            BLACK ICE ▶    
                             <fieldset class="repeating_blackice">
-                                <input type="checkbox" name="attr_loaded" value="0"/>
-                                <input name="attr_blackice" type="text" style="width: 75px;"/>
-                                <select name="attr_biclass" style="width: 75px;" class="select-lifepath">
+                                LOADED <input type="checkbox" name="attr_loaded" value="0"/>
+                                PROGRAM <input name="attr_blackice" type="text" style="width: 150px;"/>
+                                CLASS <select name="attr_biclass" style="width: 100px;" class="select-lifepath">
                                     <option value="00"></option>
                                     <option value="01">ANTI-PERSONNEL</option>
                                     <option value="02">ANTI-PROGRAM</option>
-                                </select>
-                                <input name="attr_biper" type="number" style="width: 40px;" value=""/>
-                                <input name="attr_bispd" type="number" style="width: 40px;" value=""/>
-                                <input name="attr_biatk" type="number" style="width: 40px;" value=""/>
-                                <input name="attr_bidef" type="number" style="width: 40px;" value=""/>
-                                <input name="attr_birez" type="number" style="width: 40px;" value=""/><br>
-                                <button type="roll" name="roll_biper" style="width: 30px;" class="txt-btn" value="&{template:skill} {{handle=@{character_name}}} {{rollname=@{blackice}}} {{critroll=[[10 + 1d10 + @{biper} + @{swmod} + @{extra} + @{rollmod}]]}} {{failroll=[[1 - 1d10 + @{biper} + @{swmod} + @{extra} + @{rollmod}]]}} {{roll=[[1d10 + @{biper} + @{swmod} + @{extra} + @{rollmod}]]}}">PER</button>
-                                <button type="roll" name="roll_bispd" style="width: 30px;" class="txt-btn" value="&{template:skill} {{handle=@{character_name}}} {{rollname=@{blackice}}} {{critroll=[[10 + 1d10 + @{bispd} + @{swmod} + @{extra} + @{rollmod}]]}} {{failroll=[[1 - 1d10 + @{bispd} + @{swmod} + @{extra} + @{rollmod}]]}} {{roll=[[1d10 + @{bispd} + @{swmod} + @{extra} + @{rollmod}]]}}">SPD</button>
-                                <button type="roll" name="roll_biatk" style="width: 30px;" class="txt-btn" value="&{template:skill} {{handle=@{character_name}}} {{rollname=@{blackice}}} {{critroll=[[10 + 1d10 + @{biatk} + @{swmod} + @{extra} + @{rollmod}]]}} {{failroll=[[1 - 1d10 + @{biatk} + @{swmod} + @{extra} + @{rollmod}]]}} {{roll=[[1d10 + @{biatk} + @{swmod} + @{extra} + @{rollmod}]]}}">ATK</button>
-                                <button type="roll" name="roll_bidef" style="width: 30px;" class="txt-btn" value="&{template:skill} {{handle=@{character_name}}} {{rollname=@{blackice}}} {{critroll=[[10 + 1d10 + @{bidef} + @{swmod} + @{extra} + @{rollmod}]]}} {{failroll=[[1 - 1d10 + @{bidef} + @{swmod} + @{extra} + @{rollmod}]]}} {{roll=[[1d10 + @{bidef} + @{swmod} + @{extra} + @{rollmod}]]}}">DEF</button>
-                                <textarea name="attr_blackicenotes" style="height: 30px; width: 220px;" value="">
+                                </select><br>
+                                <button type="roll" name="roll_biper" style="width: 50px;" class="txt-btn" value="&{template:skill} {{handle=@{character_name}}} {{rollname=@{blackice}}} {{critroll=[[10 + 1d10 + @{biper} + @{swmod} + @{extra} + @{rollmod}]]}} {{failroll=[[1 - 1d10 + @{biper} + @{swmod} + @{extra} + @{rollmod}]]}} {{roll=[[1d10 + @{biper} + @{swmod} + @{extra} + @{rollmod}]]}}">PERCEPTION</button>
+                                <input name="attr_biper" type="number" style="width: 20px;" value=""/>
+                                <button type="roll" name="roll_bispd" style="width: 40px;" class="txt-btn" value="&{template:skill} {{handle=@{character_name}}} {{rollname=@{blackice}}} {{critroll=[[10 + 1d10 + @{bispd} + @{swmod} + @{extra} + @{rollmod}]]}} {{failroll=[[1 - 1d10 + @{bispd} + @{swmod} + @{extra} + @{rollmod}]]}} {{roll=[[1d10 + @{bispd} + @{swmod} + @{extra} + @{rollmod}]]}}">SPEED</button>
+                                <input name="attr_bispd" type="number" style="width: 20px;" value=""/>
+                                <button type="roll" name="roll_biatk" style="width: 40px;" class="txt-btn" value="&{template:skill} {{handle=@{character_name}}} {{rollname=@{blackice}}} {{critroll=[[10 + 1d10 + @{biatk} + @{swmod} + @{extra} + @{rollmod}]]}} {{failroll=[[1 - 1d10 + @{biatk} + @{swmod} + @{extra} + @{rollmod}]]}} {{roll=[[1d10 + @{biatk} + @{swmod} + @{extra} + @{rollmod}]]}}">ATTACK</button>
+                                <input name="attr_biatk" type="number" style="width: 20px;" value=""/>
+                                <button type="roll" name="roll_bidef" style="width: 40px;" class="txt-btn" value="&{template:skill} {{handle=@{character_name}}} {{rollname=@{blackice}}} {{critroll=[[10 + 1d10 + @{bidef} + @{swmod} + @{extra} + @{rollmod}]]}} {{failroll=[[1 - 1d10 + @{bidef} + @{swmod} + @{extra} + @{rollmod}]]}} {{roll=[[1d10 + @{bidef} + @{swmod} + @{extra} + @{rollmod}]]}}">DEFEND</button>
+                                <input name="attr_bidef" type="number" style="width: 20px;" value=""/>
+                                REZ <input name="attr_birez" type="number" style="width: 30px;" value=""/> / <input name="attr_birez|max" type="number" style="width: 30px;" value=""/><br>
+                                <textarea name="attr_blackicenotes" style="height: 30px; width: 380px;" value="">
                                 </textarea>
+                                <hr>
                             </fieldset><br>
                         </div>
                         <input type="checkbox" name="attr_cdmenu" value="c" class="sheet-hidden sheet-hider">
@@ -389,6 +396,7 @@
                                 <input name="attr_hardware" type="text" style="width: 380px;"/><br>
                                 <textarea name="attr_harwarenotes" style="height: 45px; width: 380px;" value="">
                                 </textarea>
+                                <hr>
                             </fieldset>
                         </div>
                         <input type="checkbox" name="attr_cdmenu" value="d" class="sheet-hidden sheet-hider">

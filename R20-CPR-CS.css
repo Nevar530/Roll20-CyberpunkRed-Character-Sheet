@@ -1,8 +1,142 @@
 {
-    "legacy": false
+   "legacy": false;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Oswald|Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oswald|Orbitron|&display=swap');
+
+/*CSS ANIMATIONS*/
+
+.charsheet button[type="action"].txt-btn:hover,
+.charsheet button[type="roll"].txt-btn:hover{
+            animation: color-change-2x 0.5s linear infinite alternate both;
+}
+
+@keyframes color-change-2x {
+  0% {
+    background: black;
+    color:darkred;
+  }
+  100% {
+    background: darkred;
+  }
+}
+
+h1 {
+	-webkit-animation: flicker-3 2.5s linear infinite both;
+	        animation: flicker-3 2.5s linear infinite both;
+}
+
+@-webkit-keyframes flicker-3 {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  32.98% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0;
+  }
+  34% {
+    opacity: 0;
+  }
+  34.02% {
+    opacity: 1;
+  }
+  34.98% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0;
+  }
+  35.9% {
+    opacity: 0;
+  }
+  35.92% {
+    opacity: 1;
+  }
+  38.98% {
+    opacity: 1;
+  }
+  39% {
+    opacity: 0;
+  }
+  39.8% {
+    opacity: 0;
+  }
+  39.82% {
+    opacity: 1;
+  }
+  83.98% {
+    opacity: 1;
+  }
+  84% {
+    opacity: 0;
+  }
+  84.9% {
+    opacity: 0;
+  }
+  84.92% {
+    opacity: 1;
+  }
+}
+@keyframes flicker-3 {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  32.98% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0;
+  }
+  34% {
+    opacity: 0;
+  }
+  34.02% {
+    opacity: 1;
+  }
+  34.98% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0;
+  }
+  35.9% {
+    opacity: 0;
+  }
+  35.92% {
+    opacity: 1;
+  }
+  38.98% {
+    opacity: 1;
+  }
+  39% {
+    opacity: 0;
+  }
+  39.8% {
+    opacity: 0;
+  }
+  39.82% {
+    opacity: 1;
+  }
+  83.98% {
+    opacity: 1;
+  }
+  84% {
+    opacity: 0;
+  }
+  84.9% {
+    opacity: 0;
+  }
+  84.92% {
+    opacity: 1;
+  }
+}
+
+
+
 
 /*Configure the tab buttons*/
 .sheet-character,
@@ -21,6 +155,33 @@
 }
 .sheet-hider:not(:checked) + div {
   display: none;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
 /*----------------- FORMATING ------------------*/
@@ -163,7 +324,7 @@ select {
     box-shadow: 1px 1px 2px black;
 }
 
-select.sheet-select-type {
+select.select-type {
   font-family: 'Oswald', arial, helvetica, sans-serif;
   width: 50px;
   height: 25px;
@@ -178,7 +339,7 @@ select.sheet-select-type {
     box-shadow: 1px 1px 2px black;
 }
 
-select.sheet-select-lifepath {
+select.select-lifepath {
   font-family: 'Oswald', arial, helvetica, sans-serif;
   width: 50px;
   height: 25px;
@@ -193,7 +354,7 @@ select.sheet-select-lifepath {
     box-shadow: 1px 1px 2px black;
 }
 
-select.sheet-select-normal {
+select.select-normal {
   font-family: 'Oswald', arial, helvetica, sans-serif;
   text-transform: uppercase;
   width: 50px;
@@ -210,64 +371,17 @@ select.sheet-select-normal {
 
 /*----------------- BUTTONS ------------------*/
 
-.sheet-txt-btn{
+.txt-btn{
     Background: ghostwhite;
-      box-shadow: 1px 1px 2px black;
+    box-shadow: 1px 1px 2px black;
 }
 
-button[type="roll"].sheet-txt-btn:before{
-  content: '';
+
+.charsheet button[type="roll"].txt-btn:before{
+    content:'';
 }
 
-button[type="roll"].sheet-txt-btn{
-  text-align: bottom;
-  vertical-align: top;
-  box-shadow: 0px;
-  height: 20px;
-  border: 0px solid darkred;
-  margin: 0px 0px 2px 1px;
-  font-size: 10px;
-  font-weight: bold;
-  border-radius: 10px 0px 5px 0px;
-  padding: 0px 2px 0px 2px;
-  
-}
-
-button[type="roll"].sheet-txt-btn:hover{
-    background-color: darkred;
-    color:white;
-    height: 20px;
-    border-radius: 10px 0px 5px 0px;
-}
-
-.sheet-info-btn{
-    Background: ghostwhite;
-      box-shadow: 1px 1px 2px black;
-}
-
-button[type="roll"].sheet-info-btn:before{
-  content: "";
-}
-
-button[type="roll"].sheet-info-btn{
-  box-sizing: border-box;
-  vertical-align: top;
-  color: black;
-  border: 0px;
-
-}
-
-button[type="roll"].sheet-info-btn:hover{
-    color: red;
-    border: 0px;
-
-}
-
-button[type="action"].sheet-txt-btn:before{
-  content: ' ';
-}
-
-button[type="action"].sheet-txt-btn{
+.charsheet button[type="roll"].txt-btn{
   text-align: bottom;
   vertical-align: top;
   box-shadow: 0px;
@@ -281,18 +395,65 @@ button[type="action"].sheet-txt-btn{
   
 }
 
-button[type="action"].sheet-txt-btn:hover{
+.charsheet button[type="roll"].txt-btn:hover{
+    background-color: darkred;
+    color:white;
+    height: 20px;
+    border-radius: 10px 0px 5px 0px;
+}
+.info-btn{
+    Background: ghostwhite;
+      box-shadow: 1px 1px 2px black;
+}
+
+.charsheet button[type="roll"].info-btn:before{
+  content: "";
+}
+
+.charsheet button[type="roll"].info-btn{
+  box-sizing: border-box;
+  vertical-align: top;
+  color: black;
+  border: 0px;
+
+}
+
+.charsheet button[type="roll"].info-btn:hover{
+    color: red;
+    border: 0px;
+
+}
+
+.charsheet button[type="action"].txt-btn:before{
+  content: ' ';
+}
+
+.charsheet button[type="action"].txt-btn{
+  text-align: bottom;
+  vertical-align: top;
+  box-shadow: 0px;
+  height: 20px;
+  border: 0px solid darkred;
+  margin: 0px 0px 2px 1px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 10px 0px 5px 0px;
+  padding: 0px 2px 0px 2px;
+  
+}
+
+.charsheet button[type="action"].txt-btn:hover{
     background-color: darkred;
     color:white;
     height: 20px;
     border-radius: 10px 0px 5px 0px;
 }
 
-button[type="action"].sheet-tab-btn:before{
+.charsheet button[type="action"].tab-btn:before{
   content: ' ';
 }
 
-button[type="action"].sheet-tab-btn{
+.charsheet button[type="action"].tab-btn{
     font-family: 'Orbitron', Impact, sans-serif;
   text-align: bottom;
   vertical-align: top;
@@ -310,7 +471,7 @@ button[type="action"].sheet-tab-btn{
   
 }
 
-button[type="action"].sheet-tab-btn:hover{
+.charsheet button[type="action"].tab-btn:hover{
     background-color: darkred;
     color:white;
     height: 20px;
@@ -318,11 +479,11 @@ button[type="action"].sheet-tab-btn:hover{
 }
 
 
-button[type="action"].sheet-info-btn:before{
+.charsheet button[type="action"].info-btn:before{
   content: ' ';
 }
 
-button[type="action"].sheet-info-btn{
+.charsheet button[type="action"].info-btn{
   box-sizing: border-box;
   vertical-align: top;
   color: black;
@@ -330,7 +491,7 @@ button[type="action"].sheet-info-btn{
   background: 0px;
 }
 
-button[type="action"].sheet-info-btn:hover{
+.charsheet button[type="action"].info-btn:hover{
     color: red;
     border: 0px;
 }
@@ -345,7 +506,7 @@ button[type="action"].sheet-info-btn:hover{
 
 /*----------------- CHARACTER TAB GRIDS ------------------*/
 
-.sheet-grid {
+.grid {
   display: grid;
    grid-template-columns: 250px 150px;
    grid-template-areas: 
@@ -364,20 +525,20 @@ button[type="action"].sheet-info-btn:hover{
   background: whitesmoke;
 }
 
-.sheet-box1{
+.box1{
     grid-area:box1;
     text-align:center;
     max-width: 250px;
     background: transparent;
 }
-.sheet-box2{
+.box2{
     grid-area: box2;
     text-align:center;
     max-width: 150px;
     background: transparent;
 }
 
-.sheet-box4{
+.box4{
     grid-area: box4;
     overflow: auto;
     white-space: nowrap;
@@ -385,7 +546,7 @@ button[type="action"].sheet-info-btn:hover{
     background:transparent;
 }
 
-.sheet-box7{
+.box7{
     grid-area: box7;
     overflow: auto;
     white-space: nowrap;
@@ -394,7 +555,7 @@ button[type="action"].sheet-info-btn:hover{
 }
 
 
-.sheet-skillgrid {
+.skillgrid {
     display:grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2px;
@@ -402,7 +563,7 @@ button[type="action"].sheet-info-btn:hover{
 
 }
 
-.sheet-skillgrid2 {
+.skillgrid2 {
     display:grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2px;
@@ -410,7 +571,7 @@ button[type="action"].sheet-info-btn:hover{
 
 }
 
-.sheet-skillgrid3 {
+.skillgrid3 {
     display:grid;
   grid-template-columns: 1fr 3fr;
   grid-gap: 2px;
@@ -420,7 +581,7 @@ button[type="action"].sheet-info-btn:hover{
 
 /*----------------- INFORMATION TAB GRIDS ------------------*/
 
-.sheet-grid3 {
+.grid3 {
    grid-template-columns: 400px;
    grid-template-areas: 
     "ra"
@@ -435,11 +596,11 @@ button[type="action"].sheet-info-btn:hover{
   border: 2px solid black;
 }
 
-.sheet-grid3 > div{
+.grid3 > div{
     padding:2px;
 }
 
-.sheet-gridlp {
+.gridlp {
    grid-template-columns: 200px 200px;
    grid-template-areas: 
     "lptab lptab"
@@ -457,52 +618,52 @@ button[type="action"].sheet-info-btn:hover{
 }
 
 
-.sheet-lpbox{
+.lpbox{
     grid-area:lpbox;
     background:transparent;
     overflow: auto;
 }
 
-.sheet-ra{
+.ra{
     grid-area:ra;
     background:transparent;
 }
-.sheet-lp{
+.lp{
     grid-area:lp;
     background:transparent;
 }
 
-.sheet-lp2{
+.lp2{
     grid-area:lp2;
     background:transparent;
 }
 
-.sheet-lptab{
+.lptab{
     grid-area:lptab;
     background:transparent;
 }
 
-.sheet-fr{
+.fr{
     grid-area:fr;
     background:transparent;
 }
 
-.sheet-tl{
+.tl{
     grid-area:tl;
     background:transparent;
 }
 
-.sheet-en{
+.en{
     grid-area:en;
     background:transparent;
 }
 
-.sheet-rlp{
+.rlp{
     grid-area:rlp;
     background:transparent;
 }
 
-.sheet-netrunner {
+.netrunner {
    grid-template-columns: 165px 165px;
    grid-template-areas: 
     "actions deck"
@@ -520,22 +681,22 @@ button[type="action"].sheet-info-btn:hover{
   border: 2px solid black;
 }
 
-.sheet-actions{
+.actions{
     grid-area:actions;
     background:transparent;
 }
 
-.sheet-deck{
+.deck{
     grid-area:deck;
     background:transparent;
 }
 
-.sheet-hardware{
+.hardware{
     grid-area:hardware;
     background:transparent;
 }
 
-.sheet-software{
+.software{
     grid-area:software;
     background:transparent;
 }
@@ -835,7 +996,7 @@ button[type="action"].sheet-info-btn:hover{
   border: 2px solid rgba(167, 168, 170,1);
 }
 
-.sheet-flex-table {
+.flex-table {
   display: flex;
   justify-content: space-between;
   flex-flow: row wrap;
@@ -844,14 +1005,14 @@ button[type="action"].sheet-info-btn:hover{
   list-style: none;
 }
 
-.sheet-flex-table div {
+.flex-table div {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 
-.sheet-main .sheet-flex-table div input{
+.main .sheet-flex-table div input{
   margin: 0;
   padding: 0;
   width: 100%;
@@ -860,31 +1021,31 @@ button[type="action"].sheet-info-btn:hover{
   min-width:0
 }
 
-.sheet-main .sheet-flex-table div input[type=number]{
+.main .sheet-flex-table div input[type=number]{
   text-align: center;
 }
 
-.sheet-netrunning .sheet-flex-table input{
+.netrunning .sheet-flex-table input{
   text-align: center;
 }
 
-.sheet-my-settings {
+.my-settings {
   display: flex;
 }
 
-.sheet-settings-title {
+.settings-title {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.sheet-my-settings div {
+.my-settings div {
   margin: 4px;
   padding: 4px;
 }
 
-.sheet-option {
+.option {
   display: flex;
   border: 1px solid #0f0f0f;
 }
@@ -892,23 +1053,20 @@ button[type="action"].sheet-info-btn:hover{
 /*----------------- BELOW LINE FOR MOBILE ------------------*/
 
 
-	@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 380px) {
 	    
-	    .sheet-wrapper {
-		min-width: 400px;
-	}
-	
+@import url('https://fonts.googleapis.com/css?family=Oswald|Orbitron&display=swap');
 /*----------------- LAYOUT BASIC ------------------*/
 
 .content {
     width: 100%;
-    min-width: 400px;
-    max-width: 400px;
+    min-width: 380px;
+    max-width: 380px;
 }
 
 /*----------------- CHARACTER TAB GRIDS ------------------*/
 
-.sheet-grid {
+.grid {
   display: grid;
    grid-template-columns: 250px 150px;
    grid-template-areas: 
@@ -927,20 +1085,20 @@ button[type="action"].sheet-info-btn:hover{
   background: whitesmoke;
 }
 
-.sheet-box1{
+.box1{
     grid-area:box1;
     text-align:center;
     max-width: 250px;
     background: transparent;
 }
-.sheet-box2{
+.box2{
     grid-area: box2;
     text-align:center;
     max-width: 150px;
     background: transparent;
 }
 
-.sheet-box4{
+.box4{
     grid-area: box4;
     overflow: auto;
     white-space: nowrap;
@@ -948,7 +1106,7 @@ button[type="action"].sheet-info-btn:hover{
     background:transparent;
 }
 
-.sheet-box7{
+.box7{
     grid-area: box7;
     overflow: auto;
     white-space: nowrap;
@@ -957,7 +1115,7 @@ button[type="action"].sheet-info-btn:hover{
 }
 
 
-.sheet-skillgrid {
+.skillgrid {
     display:grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2px;
@@ -965,7 +1123,7 @@ button[type="action"].sheet-info-btn:hover{
 
 }
 
-.sheet-skillgrid2 {
+.skillgrid2 {
     display:grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 2px;
@@ -973,7 +1131,7 @@ button[type="action"].sheet-info-btn:hover{
 
 }
 
-.sheet-skillgrid3 {
+.skillgrid3 {
     display:grid;
   grid-template-columns: 1fr 3fr;
   grid-gap: 2px;
@@ -983,7 +1141,7 @@ button[type="action"].sheet-info-btn:hover{
 
 /*----------------- INFORMATION TAB GRIDS ------------------*/
 
-.sheet-grid3 {
+.grid3 {
    grid-template-columns: 400px;
    grid-template-areas: 
     "ra"
@@ -998,11 +1156,11 @@ button[type="action"].sheet-info-btn:hover{
   border: 2px solid black;
 }
 
-.sheet-grid3 > div{
+.grid3 > div{
     padding:2px;
 }
 
-.sheet-gridlp {
+.gridlp {
    grid-template-columns: 200px 200px;
    grid-template-areas: 
     "lptab lptab"
@@ -1020,52 +1178,52 @@ button[type="action"].sheet-info-btn:hover{
 }
 
 
-.sheet-lpbox{
+.lpbox{
     grid-area:lpbox;
     background:transparent;
     overflow: auto;
 }
 
-.sheet-ra{
+.ra{
     grid-area:ra;
     background:transparent;
 }
-.sheet-lp{
+.lp{
     grid-area:lp;
     background:transparent;
 }
 
-.sheet-lp2{
+.lp2{
     grid-area:lp2;
     background:transparent;
 }
 
-.sheet-lptab{
+.lptab{
     grid-area:lptab;
     background:transparent;
 }
 
-.sheet-fr{
+.fr{
     grid-area:fr;
     background:transparent;
 }
 
-.sheet-tl{
+.tl{
     grid-area:tl;
     background:transparent;
 }
 
-.sheet-en{
+.en{
     grid-area:en;
     background:transparent;
 }
 
-.sheet-rlp{
+.rlp{
     grid-area:rlp;
     background:transparent;
 }
 
-.sheet-netrunner {
+.netrunner {
    grid-template-columns: 165px 165px;
    grid-template-areas: 
     "actions deck"
@@ -1083,25 +1241,26 @@ button[type="action"].sheet-info-btn:hover{
   border: 2px solid black;
 }
 
-.sheet-actions{
+.actions{
     grid-area:actions;
     background:transparent;
 }
 
-.sheet-deck{
+.deck{
     grid-area:deck;
     background:transparent;
 }
 
-.sheet-hardware{
+.hardware{
     grid-area:hardware;
     background:transparent;
 }
 
-.sheet-software{
+.software{
     grid-area:software;
     background:transparent;
 }
+
 }
 	
 

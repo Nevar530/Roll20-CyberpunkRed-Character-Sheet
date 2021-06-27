@@ -2,7 +2,21 @@
    "legacy": false;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Oswald|Orbitron|&display=swap');
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/orbitron/v17/yMJMMIlzdpvBhQQL_SC3X9yhF25-T1nyGy6BoWgz.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/oswald/v36/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUZiZQ.woff2') format('woff2');
+}
 
 /*CSS ANIMATIONS*/
 
@@ -1052,10 +1066,24 @@ select.select-normal {
 
 /*----------------- BELOW LINE FOR MOBILE ------------------*/
 
-
 @media only screen and (max-width: 380px) {
-	    
-@import url('https://fonts.googleapis.com/css?family=Oswald|Orbitron&display=swap');
+
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/orbitron/v17/yMJMMIlzdpvBhQQL_SC3X9yhF25-T1nyGy6BoWgz.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/oswald/v36/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUZiZQ.woff2') format('woff2');
+}
+
 /*----------------- LAYOUT BASIC ------------------*/
 
 .content {

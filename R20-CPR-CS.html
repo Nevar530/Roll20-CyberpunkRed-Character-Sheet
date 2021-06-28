@@ -3148,13 +3148,29 @@ on("change:repeating_weapons:Weapontype change:handgun change:melee change:brawl
 			"repeating_weapons_Weapontype",
 			"repeating_weapons_Weaponmod",
 			"brawling",
+			"lvlbrawling",
+			"modbrawling",
 			"martial",
+			"lvlmartial",
+			"modmartial",
 			"archery",
+			"lvlarchery",
+			"modarchery",
 			"handgun",
+			"lvlhandgun",
+			"modhandgun",
 			"heavyarms",
-			"Shoulderarms",
+			"lvlheavyarms",
+			"modheavyarms",
+			"shoulderarms",
+			"lvlshoulderarms",
+			"modshoulderarms",
 			"melee",
+			"lvlmelee",
+			"modmelee",
 			"autofire",
+			"lvlautofire",
+			"modautofire",
 			"ref",
 			"dex"
 			], function(values) {
@@ -3162,51 +3178,59 @@ on("change:repeating_weapons:Weapontype change:handgun change:melee change:brawl
 				var weaponmod;
 				const DEX = parseInt(values.dex)||0;
 				const REF = parseInt(values.ref)||0;
-				const Archery = parseInt(values.archery)||0;
-				const Handgun = parseInt(values.handgun)||0;
-				const HeavyArms = parseInt(values.heavyarms)||0;
-				const Melee = parseInt(values.melee)||0;
-				const MartialArts= parseInt(values.martial)||0;
-				const Brawling = parseInt(values.brawling)||0;				
-				const ShoulderArms = parseInt(values.shoulderarms)||0;
-				const Autofire = parseInt(values.autofire)||0;
+				const Archery = parseInt(values.lvlarchery)||0;
+				const modArchery = parseInt(values.modarchery)||0;
+				const Handgun = parseInt(values.lvlhandgun)||0;
+				const modHandgun = parseInt(values.modhandgun)||0;
+				const HeavyArms = parseInt(values.lvlheavyarms)||0;
+				const modHeavyArms = parseInt(values.modheavyarms)||0;
+				const Melee = parseInt(values.lvlmelee)||0;
+				const modMelee = parseInt(values.modmelee)||0;
+				const MartialArts= parseInt(values.lvlmartial)||0;
+				const modMartialArts= parseInt(values.modmartial)||0;
+				const Brawling = parseInt(values.lvlbrawling)||0;
+				const modBrawling = parseInt(values.modbrawling)||0;	
+				const ShoulderArms = parseInt(values.lvlshoulderarms)||0;
+				const modShoulderArms = parseInt(values.modshoulderarms)||0;
+				const Autofire = parseInt(values.lvlautofire)||0;
+				const modAutofire = parseInt(values.modautofire)||0;
 
 				switch(values.repeating_weapons_Weapontype) {
 					case "Brawling":
-					weaponmod = DEX + Brawling;
+					weaponmod = DEX + Brawling + modBrawling;
 					break;
 					case "Martial Arts":
-					weaponmod = DEX + MartialArts;
+					weaponmod = DEX + MartialArts + modMartialArts;
 					break;					
 					case "Melee":
-					weaponmod = DEX + Melee;
+					weaponmod = DEX + Melee + modMelee;
 					break;
 					case "Pistol":
-					weaponmod = REF + Handgun;
+					weaponmod = REF + Handgun + modHandgun;
 					break;
 					case "SMG":
-					weaponmod = REF + Handgun;
+					weaponmod = REF + Handgun + modHandgun;
 					break;
 					case "SMG (Autofire)":
-					weaponmod = REF + Autofire;
+					weaponmod = REF + Autofire + modAutofire;
 					break;
 					case "Shotgun (Slug)":
-					weaponmod = REF + ShoulderArms;
+					weaponmod = REF + ShoulderArms + modShoulderArms;
 					break;
 					case "AR (Autofire)":
-					weaponmod = REF + Autofire;
+					weaponmod = REF + Autofire + modAutofire;
 					break;
 					case "Sniper Rifle":
-					weaponmod = REF + ShoulderArms;
+					weaponmod = REF + ShoulderArms + modShoulderArms;
 					break;
 					case "Bow/Crossbow":
-					weaponmod = REF + Archery;
+					weaponmod = REF + Archery + modArchery;
 					break;
 					case "Grenade Launcher":
-					weaponmod = REF + HeavyArms;
+					weaponmod = REF + HeavyArms + modHeavyArms;
 					break;
 					case "Rocket Launcher":
-					weaponmod = REF + HeavyArms;
+					weaponmod = REF + HeavyArms + modHeavyArms;
 					break;
 					default:		
 				}

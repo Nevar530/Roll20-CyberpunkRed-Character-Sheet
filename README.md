@@ -6,4 +6,4 @@ This is a full character sheet for Cyberpunk Red VTT for Roll20
 
 It is a work in progress in its current state it will run. I do have a todo list.<br>
 
-01: Get sheet made official on Roll20
+

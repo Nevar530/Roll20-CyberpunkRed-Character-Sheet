@@ -2501,8 +2501,6 @@ stats.forEach(function (stat) {
 });
 </script>
 
-
-
 <script type="text/worker">
 on("change:role change:roleability sheet:opened", function(){
     getAttrs(["role", "roleability"], function(values) {
@@ -2519,7 +2517,7 @@ on("change:role change:roleability sheet:opened", function(){
             result = 'Operator';
             }
         else if (role === 'Media'){ 
-            result = 'Ccredibility'; 
+            result = 'Credibility'; 
             }
         else if (role === 'Medtech'){
             result = 'Medicine';
@@ -2740,42 +2738,6 @@ on("clicked:cyber", function(){
 </script>
 
 <script type="text/worker">
-on("clicked:fire", function(){
-    getAttrs(["magazine", "shots"], function(values){
-        let magazine = parseInt(values.magazine);
-        let shots = parseInt(values.shots);
-        setAttrs({
-       "magazine" : (magazine - 1)
-    });
-  });
-});
-</script>
-
-<script type="text/worker">
-on("clicked:reload", function(){
-    getAttrs(["tmagazine", "magazine"], function(values){
-        let tmagazine = parseInt(values.tmagazine);
-        let magazine = parseInt(values.magazine);
-        setAttrs({
-       "magazine" : (tmagazine)
-    });
-  });
-});
-</script>
-
-<script type="text/worker">
-on("clicked:fire", function(){
-    getAttrs(["magazine", "shots"], function(values){
-        let magazine = parseInt(values.magazine);
-        let shots = parseInt(values.shots);
-        setAttrs({
-       "shots" : (shots - 1)
-    });
-  });
-});
-</script>
-
-<script type="text/worker">
 on("change:interfaceskill change:nanumber sheet:opened", function(){
     getAttrs(["interfaceskill", "nanumber"], function(values){
         var nanumber = +values.nanumber||0;
@@ -2816,297 +2778,6 @@ on("change:interfaceskill change:nanumber sheet:opened", function(){
             result = 0;     }
         setAttrs({nanumber: result});
     });
-});
-</script>
-
-<script type="text/worker">
-on("change:w1e change:w2e change:w3e change:w4e", function(){
-    getAttrs(["tshots", "shots"], function(values){
-        let tshots = parseInt(values.tshots);
-        let shots = parseInt(values.shots);
-        setAttrs({
-       "shots" : tshots
-    });
-  });
-});
-</script>
-
-<script type="text/worker">
-on("change:w1e change:w2e change:w3e change:w4e", function(){
-    getAttrs(["tmagazine", "magazine"], function(values){
-        let tmagazine = parseInt(values.tmagazine);
-        let magazine = parseInt(values.magazine);
-        setAttrs({
-       "magazine" : tmagazine
-    });
-  });
-});
-</script>
-
-<script type="text/worker">
-on("change:w1e change:w2e change:w3e change:w4e change:w1mod change:w2mod change:w3mod change:w4mod sheet:opened", function(){
-    getAttrs(["w1mod", "w1e", "w2mod", "w2e", "w3mod", "w3e", "w4mod", "w4e"], function(values){
-        let w1mod = parseInt(values.w1mod);
-        let w2mod = parseInt(values.w2mod);
-        let w3mod = parseInt(values.w3mod);
-        let w4mod = parseInt(values.w4mod);
-        let w1e = parseInt(values.w1e);
-        let w2e = parseInt(values.w2e);
-        let w3e = parseInt(values.w3e);
-        let w4e = parseInt(values.w4e);
-      setAttrs({
-       "twmod" : ((w1mod * w1e) + (w2mod * w2e) + (w3mod * w3e) + (w4mod * w4e))
-    });
-  });
-});
-</script>
-
-<script type="text/worker">
-on("change:cg1hl change:cg2hl change:cg3hl change:cg4hl change:cg5hl change:cg6hl change:cg7hl change:cg8hl change:cg9hl  sheet:opened", function(){
-    getAttrs(["cg1hl", "cg2hl", "cg3hl", "cg4hl", "cg5hl", "cg6hl", "cg7hl", "cg8hl", "cg9hl", "tcghl"], function(values){
-        let cg1hl = parseInt(values.cg1hl);
-        let cg2hl = parseInt(values.cg2hl);
-        let cg3hl = parseInt(values.cg3hl);
-        let cg4hl = parseInt(values.cg4hl);
-        let cg5hl = parseInt(values.cg5hl);
-        let cg6hl = parseInt(values.cg6hl);
-        let cg7hl = parseInt(values.cg7hl);
-        let cg8hl = parseInt(values.cg8hl);
-        let cg9hl = parseInt(values.cg9hl);
-        let tcghl = parseInt(values.tcghl);
-      setAttrs({
-       "tcghl" : (cg1hl + cg2hl + cg3hl + cg4hl + cg5hl + cg6hl + cg7hl + cg8hl + cg9hl)
-    });
-  });
-});
-</script>
-
-<script type="text/worker">
-on("change:tcghl sheet:opened", function(){
-  getAttrs(["tcghl", "hlmod"], function(values){
-       let tcghl = parseInt(values.tcghl);
-       setAttrs({
-       "hlmod": (tcghl / 10)
-    });
-  });
-});
-</script>
-
-<script type="text/worker">
-on("change:emp change:tcghs sheet:opened", function(){
-  getAttrs(["emp", "ths"], function(values){
-      let emp = parseInt(values.emp);
-      setAttrs({
-      "tcghs": (emp * 10)
-    });
-  });
-});
-</script>
-
-<script type="text/worker">
-on("change:tcghs change:tcghl sheet:opened", function(){
-  getAttrs(["tcghs", "tcghl"], function(values){
-      let tcghl = parseInt(values.tcghl);
-      let tcghs = parseInt(values.tcghs);
-      setAttrs({
-      "remhl": (tcghs - tcghl)
-    });
-  });
-});
-</script>
-
-<script type="text/worker">
-on("change:cdsw1def change:cdsw1def change:cdsw3def change:cdsw4def change:cdsw5def change:cdsw6def change:cdsw7def change:cdsw8def change:cdsw1e change:cdsw2e change:cdsw3e change:cdsw4e change:cdsw5e change:cdsw6e change:cdsw7e change:cdsw8e sheet:opened", function()
-{
-  getAttrs(["cdsw1e", "cdsw2e", "cdsw3e",  "cdsw4e", "cdsw5e", "cdsw6e", "cdsw7e", "cdsw8e", "cdsw1def", "cdsw2def", "cdsw3def",  "cdsw4def", "cdsw5def", "cdsw6def", "cdsw7def", "cdsw8def", "tcddef"], function(values)
-  {
-    let cdsw1e = +values.cdsw1e||0;
-    let cdsw2e = +values.cdsw2e||0;
-    let cdsw3e = +values.cdsw3e||0;
-    let cdsw4e = +values.cdsw4e||0;
-    let cdsw5e = +values.cdsw5e||0;
-    let cdsw6e = +values.cdsw6e||0;
-    let cdsw7e = +values.cdsw7e||0;
-    let cdsw8e = +values.cdsw8e||0;
-    let cdsw1def = +values.cdsw1def||0;
-    let cdsw2def = +values.cdsw2def||0;
-    let cdsw3def = +values.cdsw3def||0;
-    let cdsw4def = +values.cdsw4def||0;
-    let cdsw5def = +values.cdsw5def||0;
-    let cdsw6def = +values.cdsw6def||0;
-    let cdsw7def = +values.cdsw7def||0;
-    let cdsw8def = +values.cdsw8def||0;
-    let tcddef = ((cdsw1def * cdsw1e) + (cdsw2def * cdsw2e) + (cdsw3def * cdsw3e) + (cdsw4def * cdsw4e) + (cdsw5def * cdsw5e) + (cdsw6def * cdsw6e) + (cdsw7def * cdsw7e) + (cdsw8def * cdsw8e))
-      setAttrs({
-       "tcddef" : (tcddef)
-    });
-  });
-});
-</script>
-
-<script type="text/worker">
-on("change:cdsw1atk change:cdsw1atk change:cdsw3atk change:cdsw4atk change:cdsw5atk change:cdsw6atk change:cdsw7atk change:cdsw8atk change:cdsw1e change:cdsw2e change:cdsw3e change:cdsw4e change:cdsw5e change:cdsw6e change:cdsw7e change:cdsw8e sheet:opened", function()
-{
-  getAttrs(["cdsw1e", "cdsw2e", "cdsw3e",  "cdsw4e", "cdsw5e", "cdsw6e", "cdsw7e", "cdsw8e", "cdsw1atk", "cdsw2atk", "cdsw3atk",  "cdsw4atk", "cdsw5atk", "cdsw6atk", "cdsw7atk", "cdsw8atk", "tcdatk"], function(values)
-  {
-    let cdsw1e = +values.cdsw1e||0;
-    let cdsw2e = +values.cdsw2e||0;
-    let cdsw3e = +values.cdsw3e||0;
-    let cdsw4e = +values.cdsw4e||0;
-    let cdsw5e = +values.cdsw5e||0;
-    let cdsw6e = +values.cdsw6e||0;
-    let cdsw7e = +values.cdsw7e||0;
-    let cdsw8e = +values.cdsw8e||0;
-    let cdsw1atk = +values.cdsw1atk||0;
-    let cdsw2atk = +values.cdsw2atk||0;
-    let cdsw3atk = +values.cdsw3atk||0;
-    let cdsw4atk = +values.cdsw4atk||0;
-    let cdsw5atk = +values.cdsw5atk||0;
-    let cdsw6atk = +values.cdsw6atk||0;
-    let cdsw7atk = +values.cdsw7atk||0;
-    let cdsw8atk = +values.cdsw8atk||0;
-    let tcdatk = ((cdsw1atk * cdsw1e) + (cdsw2atk * cdsw2e) + (cdsw3atk * cdsw3e) + (cdsw4atk * cdsw4e) + (cdsw5atk * cdsw5e) + (cdsw6atk * cdsw6e) + (cdsw7atk * cdsw7e) + (cdsw8atk * cdsw8e))
-      setAttrs({
-       "tcdatk" : (tcdatk)
-    });
-  });
-});
-</script>
-
-<script type="text/worker">
-on("change:cdsw1shld change:cdsw1shld change:cdsw3shld change:cdsw4shld change:cdsw5shld change:cdsw6shld change:cdsw7shld change:cdsw8shld change:cdsw1e change:cdsw2e change:cdsw3e change:cdsw4e change:cdsw5e change:cdsw6e change:cdsw7e change:cdsw8e sheet:opened", function()
-{
-  getAttrs(["cdsw1e", "cdsw2e", "cdsw3e",  "cdsw4e", "cdsw5e", "cdsw6e", "cdsw7e", "cdsw8e", "cdsw1shld", "cdsw2shld", "cdsw3shld",  "cdsw4shld", "cdsw5shld", "cdsw6shld", "cdsw7shld", "cdsw8shld", "tcdshld"], function(values)
-  {
-    let cdsw1e = +values.cdsw1e||0;
-    let cdsw2e = +values.cdsw2e||0;
-    let cdsw3e = +values.cdsw3e||0;
-    let cdsw4e = +values.cdsw4e||0;
-    let cdsw5e = +values.cdsw5e||0;
-    let cdsw6e = +values.cdsw6e||0;
-    let cdsw7e = +values.cdsw7e||0;
-    let cdsw8e = +values.cdsw8e||0;
-    let cdsw1shld = +values.cdsw1shld||0;
-    let cdsw2shld = +values.cdsw2shld||0;
-    let cdsw3shld = +values.cdsw3shld||0;
-    let cdsw4shld = +values.cdsw4shld||0;
-    let cdsw5shld = +values.cdsw5shld||0;
-    let cdsw6shld = +values.cdsw6shld||0;
-    let cdsw7shld = +values.cdsw7shld||0;
-    let cdsw8shld = +values.cdsw8shld||0;
-    let tcdshld = ((cdsw1shld * cdsw1e) + (cdsw2shld * cdsw2e) + (cdsw3shld * cdsw3e) + (cdsw4shld * cdsw4e) + (cdsw5shld * cdsw5e) + (cdsw6shld * cdsw6e) + (cdsw7shld * cdsw7e) + (cdsw8shld * cdsw8e))
-      setAttrs({
-       "tcdshld" : (tcdshld)
-    });
-  });
-});
-</script>
-
-<script type="text/worker">
-on("change:cdsw1ram change:cdsw1ram change:cdsw3ram change:cdsw4ram change:cdsw5ram change:cdsw6ram change:cdsw7ram change:cdsw8ram change:cdsw1e change:cdsw2e change:cdsw3e change:cdsw4e change:cdsw5e change:cdsw6e change:cdsw7e change:cdsw8e sheet:opened", function()
-{
-  getAttrs(["cdsw1e", "cdsw2e", "cdsw3e",  "cdsw4e", "cdsw5e", "cdsw6e", "cdsw7e", "cdsw8e", "cdsw1ram", "cdsw2ram", "cdsw3ram",  "cdsw4ram", "cdsw5ram", "cdsw6ram", "cdsw7ram", "cdsw8ram", "tcdram"], function(values)
-  {
-    let cdsw1e = +values.cdsw1e||0;
-    let cdsw2e = +values.cdsw2e||0;
-    let cdsw3e = +values.cdsw3e||0;
-    let cdsw4e = +values.cdsw4e||0;
-    let cdsw5e = +values.cdsw5e||0;
-    let cdsw6e = +values.cdsw6e||0;
-    let cdsw7e = +values.cdsw7e||0;
-    let cdsw8e = +values.cdsw8e||0;
-    let cdsw1ram = +values.cdsw1ram||0;
-    let cdsw2ram = +values.cdsw2ram||0;
-    let cdsw3ram = +values.cdsw3ram||0;
-    let cdsw4ram = +values.cdsw4ram||0;
-    let cdsw5ram = +values.cdsw5ram||0;
-    let cdsw6ram = +values.cdsw6ram||0;
-    let cdsw7ram = +values.cdsw7ram||0;
-    let cdsw8ram = +values.cdsw8ram||0;
-    let tcdram = ((cdsw1ram * cdsw1e) + (cdsw2ram * cdsw2e) + (cdsw3ram * cdsw3e) + (cdsw4ram * cdsw4e) + (cdsw5ram * cdsw5e) + (cdsw6ram * cdsw6e) + (cdsw7ram * cdsw7e) + (cdsw8ram * cdsw8e))
-      setAttrs({
-       "tcdram" : (tcdram)
-    });
-  });
-});
-</script>
-
-<script type="text/worker">
-on("clicked:shielding", function(){
-    getAttrs(["cdsw1shld", "cdsw2shld", "cdsw3shld", "cdsw4shld", "cdsw5shld", "cdsw6shld", "cdsw7shld", "cdsw8shld", "cdsw1e", "cdsw2e", "cdsw3e", "cdsw4e", "cdsw5e", "cdsw6e", "cdsw7e", "cdsw8e"], function(values){
-        var cdsw1shld = parseInt(values.cdsw1shld);
-        var cdsw2shld = parseInt(values.cdsw2shld);
-        var cdsw3shld = parseInt(values.cdsw3shld);
-        var cdsw4shld = parseInt(values.cdsw4shld);
-        var cdsw5shld = parseInt(values.cdsw5shld);
-        var cdsw6shld = parseInt(values.cdsw6shld);
-        var cdsw7shld = parseInt(values.cdsw7shld);
-        var cdsw8shld = parseInt(values.cdsw8shld);
-        var cdsw1e = parseInt(values.cdsw1e);
-        var cdsw2e = parseInt(values.cdsw2e);
-        var cdsw3e = parseInt(values.cdsw3e);
-        var cdsw4e = parseInt(values.cdsw4e);
-        var cdsw5e = parseInt(values.cdsw5e);
-        var cdsw6e = parseInt(values.cdsw6e);
-        var cdsw7e = parseInt(values.cdsw7e);
-        var cdsw8e = parseInt(values.cdsw8e);
-        var cdsw1shldv = (cdsw1shld * cdsw1e)
-        var cdsw2shldv = (cdsw2shld * cdsw2e)
-        var cdsw3shldv = (cdsw3shld * cdsw3e)
-        var cdsw4shldv = (cdsw4shld * cdsw4e)
-        var cdsw5shldv = (cdsw5shld * cdsw5e)
-        var cdsw6shldv = (cdsw6shld * cdsw6e)
-        var cdsw7shldv = (cdsw7shld * cdsw7e)
-        var cdsw8shldv = (cdsw8shld * cdsw8e)
-        var output = {};
-        if (cdsw8shldv > 0) {
-            output.cdsw8shld = (cdsw8shld - 1);
-        } else if (cdsw7shldv > 0) {
-            output.chsw7shld = (cdsw7shld - 1);
-        } else if (cdsw6shldv > 0) {
-            output.cdsw6shld = (cdsw6shld - 1);
-        } else if (cdsw5shldv > 0) {
-            output.cdsw5shld = (cdsw5shld - 1);
-        } else if (cdsw4shldv > 0) {
-            output.cdsw4shld = (cdsw4shld - 1);
-        } else if (cdsw3shldv > 0) {
-            output.cdsw3shld = (cdsw3shld - 1);
-        } else if (cdsw2shldv > 0) {
-            output.cdsw2shld = (cdsw2shld - 1);
-        } else if (cdsw1shldv > 0) {
-            output.cdsw1shld = (cdsw1shld - 1);
-        }
-        setAttrs(output);
-    });
-});
-</script>
-
-<script type="text/worker">
-on("change:cdproc change:cdproc_max sheet:opened", function(){
-    getAttrs(["cdproc", "cdproc_max"], function(values){
-        var cdproc = parseInt(values.cdproc);
-        var cdproc_max = parseInt(values.cdproc_max);
-        let result = "";
-        if (cdproc < 1)
-        {
-            result =  cdproc_max;        }
-        else
-        {
-            result = cdproc;
-        }
-        setAttrs({ cdproc: result});
-    });
-});
-</script>
-
-<script type="text/worker">
-on("clicked:execute", function(){
-    getAttrs(["cdproc"], function(values){
-        let cdproc = parseInt(values.cdproc);
-        setAttrs({
-       "cdproc" : (cdproc - 1)
-    });
-  });
 });
 </script>
 
@@ -3285,7 +2956,7 @@ on("clicked:execute", function(){
 
 <script type="text/worker">
 
-on("change:repeating_weapons:Weapontype change:handgun change:melee change:brawling change:martial change:autofire change:archery change:heavyarms change:shoulderarms change:dex change:ref sheet:opened", function(){
+on("clicked:roll_attack change:repeating_weapons:Weapontype change:handgun change:melee change:brawling change:martial change:autofire change:archery change:heavyarms change:shoulderarms change:dex change:ref sheet:opened", function(){
 		getAttrs([
 			"repeating_weapons_Weapontype",
 			"repeating_weapons_Weaponmod",
@@ -3384,4 +3055,3 @@ on("change:repeating_weapons:Weapontype change:handgun change:melee change:brawl
 	});
 	
 </script>	
-
